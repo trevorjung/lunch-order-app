@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-12-16
+  vegetarian: false
+  entree: MyString
+  drink: MyString
+  entree_extra: 1
+  drink_extra: 1
+  salad: MyString
+  fruit: MyString
+
+two:
+  date: 2015-12-16
+  vegetarian: false
+  entree: MyString
+  drink: MyString
+  entree_extra: 1
+  drink_extra: 1
+  salad: MyString
+  fruit: MyString

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  family_id: 1
+  family_name: MyString
+  student_name: MyString
+  price: 9.99
+  tax: 9.99
+  subtotal: 9.99
+  total: 9.99
+  date: 2015-12-16
+
+two:
+  family_id: 1
+  family_name: MyString
+  student_name: MyString
+  price: 9.99
+  tax: 9.99
+  subtotal: 9.99
+  total: 9.99
+  date: 2015-12-16

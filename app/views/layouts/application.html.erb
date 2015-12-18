@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LunchOrderApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <body data-spy="scroll" data-target=".navbar" data-offset='61'>
+    <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+  <!--start navigation-->
+    <div class="navbar navbar-fixed-top">
+			<div class="container" data-start="padding: 15px 0px;" data-200="padding: 0px 0px;">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#intro" class="navbar-brand"><img class="img-responsive" src="http://placehold.it/166x40" alt=""></a>
+				<div class="nav-collapse collapse navbar-responsive-collapse">
+					<ul class="nav navbar-nav pull-right">
+						<li class="active"><a href="#intro">Home</a></li>
+						<li><a href="#services">Entree</a></li>
+						<li><a href="features.html">Gallery</a></li>
+						<li><a href="work.html">Schools</a></li>
+						<li><a href="team.html">Team</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    <!--start intro section-->
+    <section id="intro">
+      <div id="carousel_intro" class="carousel slide fadeing">
+        <div class="carousel-inner">
+          <div class="active item" id="slide_1" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
+            <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">Made with <i class="icon-heart"></i> and <i class="icon-coffee"></i> at awerest</h1>
+          </div>
+          <div class="inactive item" id="slide_2" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
+            <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">Make easy <i class="icon-magic"></i> animation</h1>
+          </div>
+          <div class="inactive item" id="slide_3" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
+            <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">Ready for <i class="icon-rocket"></i> when you are</h1>
+          </div>
+        </div>
+      <button class="left carousel-control" href="#carousel_intro" data-slide="prev" data-start="opacity: 0.6; left: 0%;" data-250="opacity:0; left: 5%;"><i class="icon-chevron-left"></i></button>
+      <button class="right carousel-control" href="#carousel_intro" data-slide="next" data-start="opacity: 0.6; right: 0%;" data-250="opacity:0; right: 5%;"><i class="icon-chevron-right"></i></button>
+      </div>
+      <div class="hidden-sm more">
+        <a href="#services" class="btn btn-cool squared" data-start="opacity:1; margin-top: 0%;" data-150="opacity:0; margin-top: -10%;"><i class="icon-angle-down"></i> See more</a>
+      </div>
+    </section>
+  <!--end intro section-->
+	<!--end navigation-->
+  <%= yield %>
+
+	
+	<!--start footer section-->
+		<section id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-sm-6 margin copy">
+						<p>2013 &copy; Awerest - interactive studio</p>
+					</div>
+					<div class="col-lg-4 col-sm-6 col-offset-2 margin social">
+						<a class="facebook" href="http://www.facebook.com/awerest" target="_blank">Facebook</a> / 
+						<a class="twitter" href="http://www.twitter.com/awerest" target="_blank">Twitter</a> / 
+						<a class="google" href="https://plus.google.com/u/0/104533843132286032110/posts" target="_blank">Google+</a> / 
+						<a class="instagram" href="http://www.instagram.com/awerest" target="_blank">Instagram</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!--end footer section-->
+	<!--start back to top button-->
+		<a href="#intro" class="hidden-sm go-top" data-0="opacity: 0;" data-1000="opacity: 1;">Go Top</a>
+	<!--end back to top button-->
+	<!--start scripts - IMPORTANT: all scripts MUST be loaded after jquery-latest.js as now-->
+	<!--latest jQuery-->
+	
+	<!--menu close on select-->
+		<script>
+			if ($('.navbar-toggle:visible').length) {
+				$('.navbar a').click(function () { $(".nav-collapse").collapse("hide") });
+			}
+		</script>
+	
+	</body>
+</html>
