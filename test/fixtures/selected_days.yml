@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-12-20
+  status: MyString
+  family_id: 1
+  user_id: 1
+  order_id: 1
+
+two:
+  date: 2015-12-20
+  status: MyString
+  family_id: 1
+  user_id: 1
+  order_id: 1
