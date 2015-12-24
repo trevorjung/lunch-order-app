@@ -1,333 +1,346 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Syndicate</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!--Set the descritpion of you site-->
-    <meta name="description" content="Syndicate - Multipage Bootstrap Multipurpose Template">
-    <!--Set author of your site-->
-    <meta name="author" content="Awerest - interactive agency">
-    <!--Modernizr-->
-    <!--Main Bootstrap styling-->
-    <!--Custom styling-->
-    <!--Iconic font - FontAwesome-->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <!--Google font-->
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'>
-    <!--Site thumbnail-->
-    <link rel="image_src" href="thumbnail.png">
-    <!--Browser tab icon aka Favicon-->
-    <link rel="icon" type="image/ico" href="favicon.ico">
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-    <![endif]-->
-  </head>
+
   <body data-spy="scroll" data-target=".navbar" data-offset='61'>
-    <div id="preloader">
-      <div id="status">&nbsp;</div>
-    </div>
-  <!--start navigation-->
-    <div class="navbar navbar-fixed-top">
-      <div class="container" data-start="padding: 15px 0px;" data-200="padding: 0px 0px;">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="index.html" class="navbar-brand"><img class="img-responsive" src="http://placehold.it/166x40" alt=""></a>
-        <div class="nav-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav pull-right">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="features.html">Features</a></li>
-            <li class="active"><a href="work.html">Work</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  <!--end navigation-->
-  <!--start second section-->
-    <section id="second" class="content no-header">
+    
+    
+  
+  <!--start fourth section-->
+    <section id="fourth" class="content no-header">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-offset-2">
-            <h1 class="text-center">Awesome portfolio</h1>
-            <p class="text-center">We like onepage websites, but sometimes you just need more space to show to people what you do.
-            So here it is, full screen modals to show any content that you like. Check it out by clicking on one of the items:</p>
+            <h1 class="text-center">Star of the Sea: September Lunch</h1>
+            <p class="text-center">Did we mention to you that we like onepage websites? Sure we did! 
+            But now we are extending modals with more options, check it out by clicking on one of the blog items:</p>
           </div>
           <div class="col-lg-12">
             <div class="row">
-              <ul class="grid">
-  <!--start #1 gallery-->
-                <li class="col-lg-4 col-sm-4">
-                  <a href="#gallery_1" role="button" data-toggle="modal">
-                    <figure>
-                      <img class="img-responsive" src="http://placehold.it/728x560" alt="">
-                      <figcaption>
-                        <h4>Click Me</h4>
-                        <span>July 23, 2013</span>
-                      </figcaption>
-                    </figure>
+  <!--start #1 blog-->
+              <div class="col-lg-4 col-sm-4">
+                <div class="thumbnail">
+                  <ul>
+                    <li class="readtime"><i class="icon-time"></i><p>3 min read</p></li>
+                    <li class="love"><i class="icon-picture"></i><p>Gallery</p></li>
+                    <li class="date"><i class="icon-calendar-empty"></i><p>7.10</p></li>
+                  </ul>
+                  <a href="#blog_1" role="button" data-toggle="modal">
+                    <img class="img-responsive" src="http://d1doqjmisr497k.cloudfront.net/~/media/Recipe-Photos/McCormick/Dessert/1007x545/Very-Vanilla-Fruit-Salad_1007x545.ashx?vd=20130307T105116" alt=""> </a>
+                    <div class="info">
+                      <h4>Happy</h4>
+                      <p><span><%= form_tag '/selected_days/create', method: :post do %>
+                                <div> <p> Extra Drink 
+                                  <%= check_box_tag :drink_extra %> </p>
+                                  
+                                </div>
+                                <div>
+                                  <%= hidden_field_tag :lunch_id, @lunch.id %>
+                                </div>
+
+                                <div>
+                                  <%= submit_tag "Add to Cart!" %>
+                                </div>
+
+                                <% end %>
+                      </span></p>
+                      <p><small>Cat ipsum dolor sit amet, run in circles sun bathe chew foot intently sniff hand.</small></p>
+                    </div>
+                  
+                </div>
+              </div>
+  <!--start #2 blog-->
+              <div class="col-lg-4 col-sm-4">
+                <div class="thumbnail">
+                  <ul>
+                    <li class="readtime"><i class="icon-time"></i><p>5 min read</p></li>
+                    <li class="love"><i class="icon-play-sign"></i><p>Video</p></li>
+                    <li class="date"><i class="icon-calendar-empty"></i><p>07.11</p></li>
+                  </ul>
+                  <a href="#blog_2" role="button" data-toggle="modal">
+                    <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                    <div class="info">
+                      <h4>Joyful</h4>
+                      <p><span>News</span></p>
+                      <p><small>Intently sniff hand sweet beast, run in circles, and sweet beast and sleep on keyboard.</small></p>
+                    </div>
                   </a>
-                </li>
-  <!--start #2 gallery-->
-                <li class="col-lg-4 col-sm-4">
-                  <a href="#gallery_2" role="button" data-toggle="modal">
-                    <figure>
-                      <img class="img-responsive" src="http://placehold.it/728x560" alt="">
-                      <figcaption>
-                        <h4>Click Me</h4>
-                        <span>July 22, 2013</span>
-                      </figcaption>
-                    </figure>
+                </div>
+              </div>
+  <!--start #3 blog-->
+              <div class="col-lg-4 col-sm-4">
+                <div class="thumbnail">
+                  <ul>
+                    <li class="readtime"><i class="icon-time"></i><p>7 min read</p></li>
+                    <li class="love"><i class="icon-music"></i><p>Music</p></li>
+                    <li class="date"><i class="icon-calendar-empty"></i><p>07.12</p></li>
+                  </ul>
+                  <a href="#blog_3" role="button" data-toggle="modal">
+                    <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                    <div class="info">
+                      <h4>Grumpy</h4>
+                      <p><span>Announcement</span></p>
+                      <p><small>Swat at dog intently sniff hand but find something else more interesting why must they do that.</small></p>
+                    </div>
                   </a>
-                </li>
-  <!--start #3 gallery-->
-                <li class="col-lg-4 col-sm-4">
-                  <a href="#gallery_3" role="button" data-toggle="modal">
-                    <figure>
-                      <img class="img-responsive" src="http://placehold.it/728x560" alt="">
-                      <figcaption>
-                        <h4>Click Me</h4>
-                        <span>July 21, 2013</span>
-                      </figcaption>
-                    </figure>
-                  </a>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-  <!--new gallery items row-->
-        <div class="row">
-          <ul class="grid">
-  <!--start #4 gallery-->
-            <li class="col-lg-4 col-sm-4">
-              <a href="#gallery_1" role="button" data-toggle="modal">
-                <figure>
-                  <img class="img-responsive" src="http://placehold.it/728x560" alt="">
-                  <figcaption>
-                    <h4>Click Me</h4>
-                    <span>July 20, 2013</span>
-                  </figcaption>
-                </figure>
-              </a>
-            </li>
-  <!--start #5 gallery-->
-            <li class="col-lg-4 col-sm-4">
-              <a href="#gallery_2" role="button" data-toggle="modal">
-                <figure>
-                  <img class="img-responsive" src="http://placehold.it/728x560" alt="">
-                  <figcaption>
-                    <h4>Click Me</h4>
-                    <span>July 19, 2013</span>
-                  </figcaption>
-                </figure>
-              </a>
-            </li>
-  <!--start #6 gallery-->
-            <li class="col-lg-4 col-sm-4">
-              <a href="#gallery_3" role="button" data-toggle="modal">
-                <figure>
-                  <img class="img-responsive" src="http://placehold.it/728x560" alt="">
-                  <figcaption>
-                    <h4>Click Me</h4>
-                    <span>July 18, 2013</span>
-                  </figcaption>
-                </figure>
-              </a>
-            </li>
-          </ul>
-  <!--start #1 gallery modal-->
-          <div id="gallery_1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery_1" aria-hidden="true">
-            <div class="modal-body">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-12 margin">
-                    <button type="button" class="previous" href="#gallery_3" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
-                    <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
-                    <button type="button" class="forward" href="#gallery_2" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
-                  </div>
-                  <div class="col-lg-12">
-                    <div id="carousel_modal_1" class="carousel slide fadeing">
-                      <div class="carousel-inner">
-                        <div class="active item">
-                          <img class="img-responsive" src="http://placehold.it/1140x450" alt="">
+  <!--new blog items row-->
+            <div class="row">
+  <!--start #4 blog-->
+              <div class="col-lg-4 col-sm-4">
+                <div class="thumbnail">
+                  <ul>
+                    <li class="readtime"><i class="icon-time"></i><p>4 min read</p></li>
+                    <li class="love"><i class="icon-star-empty"></i><p>Featured</p></li>
+                    <li class="date"><i class="icon-calendar-empty"></i><p>22.07</p></li>
+                  </ul>
+                  <a href="#blog_2" role="button" data-toggle="modal">
+                    <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                    <div class="info">
+                      <h4>Angry</h4>
+                      <p><span>Personal</span></p>
+                      <p><small>Behind the couch. Intently sniff hand sleep on keyboard play time.</small></p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+  <!--start #5 blog-->
+              <div class="col-lg-4 col-sm-4">
+                <div class="thumbnail">
+                  <ul>
+                    <li class="readtime"><i class="icon-time"></i><p>2 min read</p></li>
+                    <li class="love"><i class="icon-heart-empty"></i><p>Most loved</p></li>
+                    <li class="date"><i class="icon-calendar-empty"></i><p>21.07</p></li>
+                  </ul>
+                  <a href="#blog_1" role="button" data-toggle="modal">
+                    <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                    <div class="info">
+                      <h4>Madness</h4>
+                      <p><span>Insight</span></p>
+                      <p><small>Stick butt in face leave hair everywhere all of a sudden go crazy and cat snacks run in circles.</small></p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+  <!--start #6 blog-->
+              <div class="col-lg-4 col-sm-4">
+                <div class="thumbnail">
+                  <ul>
+                    <li class="readtime"><i class="icon-time"></i><p>6 min read</p></li>
+                    <li class="love"><i class="icon-book"></i><p>Personal</p></li>
+                    <li class="date"><i class="icon-calendar-empty"></i><p>20.07</p></li>
+                  </ul>
+                  <a href="#blog_3" role="button" data-toggle="modal">
+                    <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                    <div class="info">
+                      <h4>Wink</h4>
+                      <p><span>Library</span></p>
+                      <p><small>Play time stare at ceiling stick butt in face chew foot and sun bathe and flop over and under the bed.</small></p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+  <!--start #1 blog modal-->
+            <div id="blog_1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="blog_1" aria-hidden="true">
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-12 margin">
+                      <button type="button" class="previous" href="#blog_3" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
+                      <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
+                      <button type="button" class="forward" href="#blog_2" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
+                    </div>
+                    <div class="col-lg-12">
+                      <h1>Gallery Post</h1>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                          <p class="lead">Aoccdrnig to a rscheearch at Cmabrigde Uinervtisy, 
+                          it deosn't mttaer in waht oredr the ltteers in a wrod are, 
+                          the olny iprmoetnt tihng is taht the frist and lsat ltteer be at the rghit pclae.<br><br>
+                          <small>The rset can be a toatl mses and you can sitll raed it wouthit porbelm. 
+                          Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe. 
+                          Awesomeness, true story!</small></p>
+                          <blockquote>Cupcake ipsum</blockquote>
+                          <p><small> Jelly-o cheesecake gummi bears chocolate. Fruitcake sesame snaps cheesecake fruitcake. 
+                          Apple pie dessert powder pie tart topping. Dessert pastry toffee dessert bonbon bonbon sugar plum 
+                          donut sweet.</small></p>
+                          <br>
+                          <blockquote>Hairy ipsum</blockquote>
+                          <p><small>Boogie nights robot moustache got milk prince barin beefeater cigars, 
+                          boogie nights gentleman cigars robot moustache et sodales cum got milk beefeater prince barin 
+                          mustachioed cigars?</small></p>
+                          <br>
+                          <blockquote>Cheese ipsum</blockquote>
+                          <p><small>Dolcelatte manchego parmesan cheesy feet croque monsieur red leicester say cheese the big cheese. 
+                          Brie everyone loves cheese on toast monterey jack cheesy grin queso stilton cheese strings. 
+                          Cauliflower cheese roquefort halloumi.</small></p>
                         </div>
-                        <div class="inactive item">
-                          <img class="img-responsive" src="http://placehold.it/1140x450" alt="">
+                        <div class="col-lg-6 col-sm-6">
+                          <div class="row guter">
+                            <div class="col-lg-12 col-sm-12">
+                              <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                              <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                              <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                              <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                              <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                              <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <button class="left carousel-control" href="#carousel_modal_1" data-slide="prev"><i class="icon-chevron-left"></i></button>
-                      <button class="right carousel-control" href="#carousel_modal_1" data-slide="next"><i class="icon-chevron-right"></i></button>
                     </div>
                   </div>
-                  <div class="col-lg-6 col-sm-6 margin">
-                    <h1>Modal #1</h1>
-                    <p class="lead">Don't forget that you can add anything in this modal! Don't be limited to our demo sample,
-                    be creative :)<br><br>
-                    <small>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality 
-                    and smart defaults.</small></p>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 margin icons">
-                    <div class="row">
-                      <div class="col-lg-2 col-sm-2">
-                        <i class="icon-comments"></i>
-                      </div>
-                      <div class="col-lg-10 col-sm-10">
-                        <a href="#" class="btn btn-more btn-mini">More</a>
-                        <h3>Description</h3>
-                        <p><small>You could probably find few words to describe this project,
-                        and few words to say something important.</small></p>
-                      </div>
-                      <div class="col-lg-2 col-sm-2">
-                        <i class="icon-info-sign"></i>
-                      </div>
-                      <div class="col-lg-10 col-sm-10">
-                        <a href="#" class="btn btn-more btn-mini">More</a>
-                        <h3>Info</h3>
-                        <p><small>Give more informations about this project to your visitors.
-                        Add some links in buttons or just don't.</small></p>
-                      </div>
+                  <div class="row">
+                    <div class="col-lg-12 margin">
+                      <button type="button" class="previous" href="#blog_3" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
+                      <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
+                      <button type="button" class="forward" href="#blog_2" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
                     </div>
                   </div>
-                  <div class="col-lg-12 col-sm-12 margin">
-                    <button type="button" class="previous" href="#gallery_3" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
-                    <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
-                    <button type="button" class="forward" href="#gallery_2" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
+                </div>
+              </div>
+            </div>
+  <!--start #2 blog modal-->
+            <div id="blog_2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="blog_2" aria-hidden="true">
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-12 margin">
+                      <button type="button" class="previous" href="#blog_1" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
+                      <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
+                      <button type="button" class="forward" href="#blog_3" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
+                    </div>
+                    <div class="col-lg-6 video">
+                      <iframe src="http://player.vimeo.com/video/28959265?title=0&amp;byline=0&amp;portrait=0"></iframe>
+                    </div>
+                    <div class="col-lg-6">
+                      <h1>Vimeo Videos</h1>
+                      <p class="lead">Aoccdrnig to a rscheearch at Cmabrigde Uinervtisy, 
+                      it deosn't mttaer in waht oredr the ltteers in a wrod are, 
+                      the olny iprmoetnt tihng is taht the frist and lsat ltteer be at the rghit pclae.<br><br>
+                      <small>The rset can be a toatl mses and you can sitll raed it wouthit porbelm. 
+                      Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe. 
+                      Awesomeness, true story!</small></p>
+                    </div>
+                  </div>
+                  <div class="content-divider"></div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <h1>YouTube Videos</h1>
+                      <p class="lead">Aoccdrnig to a rscheearch at Cmabrigde Uinervtisy, 
+                      it deosn't mttaer in waht oredr the ltteers in a wrod are, 
+                      the olny iprmoetnt tihng is taht the frist and lsat ltteer be at the rghit pclae.<br><br>
+                      <small>The rset can be a toatl mses and you can sitll raed it wouthit porbelm. 
+                      Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe. 
+                      Awesomeness, true story!</small></p>
+                    </div>
+                    <div class="col-lg-6 video">
+                      <iframe src="//www.youtube.com/embed/2sz0mI_6tLQ"></iframe>
+                    </div>
+                    <div class="col-lg-12 margin">
+                      <button type="button" class="previous" href="#blog_1" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
+                      <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
+                      <button type="button" class="forward" href="#blog_3" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  <!--start #3 blog modal-->
+            <div id="blog_3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="blog_3" aria-hidden="true">
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-12 margin">
+                      <button type="button" class="previous" href="#blog_2" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
+                      <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
+                      <button type="button" class="forward" href="#blog_1" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
+                    </div>
+                    <div class="col-lg-12">
+                      <h1>Audio Post</h1>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                      <p class="lead">Bacon swine leberkas, ham hock flank beef venison pork belly. 
+                      Tongue capicola pork chop strip steak ribeye. Sausage short ribs ribeye kielbasa fatback jerky swine 
+                      corned beef venison.</p>
+                      <blockquote>Awerest theme:</blockquote>
+                      <audio controls="controls">
+                        <source src="http://www.awerest.com/music/awerest.mp3" type="audio/mpeg" />
+                        <source src="http://www.awerest.com/music/awerest.ogg" type="audio/ogg" />
+                        Your browser does not support this audio
+                      </audio><br>
+                      <p><small>The rset can be a toatl mses and you can sitll raed it wouthit porbelm. 
+                      Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe. 
+                      Awesomeness, true story!</small></p>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                      <p class="lead">Drop in axle roll-in rail slide noseblunt slide Steve Severin impossible. 
+                      Darkslide street mute-air bail Independent goofy footed opposite footed. Steps sick lien air hanger.</p>
+                      <blockquote>Rap loop:</blockquote>
+                      <audio controls="controls">
+                        <source src="http://www.awerest.com/music/raploop.mp3" type="audio/mpeg" />
+                        <source src="http://www.awerest.com/music/raploop.ogg" type="audio/ogg" />
+                        Your browser does not support this audio
+                      </audio><br>
+                      <p><small>The rset can be a toatl mses and you can sitll raed it wouthit porbelm. 
+                      Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe. 
+                      Awesomeness, true story!</small></p>
+                    </div>
+                  </div>
+                  <div class="content-divider"></div>
+                  <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                      <p class="lead">Nipperkin run a rig ballast chase Shiver me timbers col-lg-ish Main driver lass six pounders clipper. 
+                      Nipperkin yawl col-lg-ish Main crimp Cat o'nine tails jib keelhaul topmast..</p>
+                      <blockquote>Far east:</blockquote>
+                      <audio controls="controls">
+                        <source src="http://www.awerest.com/music/fareast.mp3" type="audio/mpeg" />
+                        <source src="http://www.awerest.com/music/fareast.ogg" type="audio/ogg" />
+                        Your browser does not support this audio
+                      </audio><br>
+                      <p><small>The rset can be a toatl mses and you can sitll raed it wouthit porbelm. 
+                      Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe. 
+                      Awesomeness, true story!</small></p>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                      <p class="lead"> Cask length filter pub, conditioning tank. Length crystal malt brew squares additive abbey 
+                      craft beer biere de garde. Priming mouthfeel krausen wort cold filter bacterial. </p>
+                      <blockquote>Christmas:</blockquote>
+                      <audio controls="controls">
+                        <source src="http://www.awerest.com/music/christmas.mp3" type="audio/mpeg" />
+                        <source src="http://www.awerest.com/music/christmas.ogg" type="audio/ogg" />
+                        Your browser does not support this audio
+                      </audio><br>
+                      <p><small>The rset can be a toatl mses and you can sitll raed it wouthit porbelm. 
+                      Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe. 
+                      Awesomeness, true story!</small></p>
+                    </div>
+                    <div class="col-lg-12 margin">
+                      <button type="button" class="previous" href="#blog_2" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
+                      <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
+                      <button type="button" class="forward" href="#blog_1" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-  <!--end #1 gallery modal-->
-  <!--start #2 gallery modal-->
-          <div id="gallery_2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery_2" aria-hidden="true">
-            <div class="modal-body">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-12 margin">
-                    <button type="button" class="previous" href="#gallery_1" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
-                    <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
-                    <button type="button" class="forward" href="#gallery_3" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
-                  </div>
-                  <div class="col-lg-12">
-                    <div id="carousel_modal_2" class="carousel slide fadeing">
-                      <div class="carousel-inner">
-                        <div class="active item">
-                          <img class="img-responsive" src="http://placehold.it/1140x450" alt="">
-                        </div>
-                        <div class="inactive item">
-                          <img class="img-responsive" src="http://placehold.it/1140x450" alt="">
-                        </div>
-                      </div>
-                      <button class="left carousel-control" href="#carousel_modal_2" data-slide="prev"><i class="icon-chevron-left"></i></button>
-                      <button class="right carousel-control" href="#carousel_modal_2" data-slide="next"><i class="icon-chevron-right"></i></button>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 margin">
-                    <h1>Modal #2</h1>
-                    <p class="lead">Don't forget that you can add anything in this modal! Don't be limited to our demo sample,
-                    be creative :)<br><br>
-                    <small>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality 
-                    and smart defaults.</small></p>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 margin icons">
-                    <div class="row">
-                      <div class="col-lg-6 col-sm-6">
-                        <i class="icon-comments"></i>
-                        <h3>Description</h3>
-                        <p><small>You could probably find few words to describe this project,
-                        and few words to say something important.</small></p>
-                      </div>
-                      <div class="col-lg-6 col-sm-6">
-                        <i class="icon-info-sign"></i>
-                        <h3>Info</h3>
-                        <p><small>Give more informations about this project to your visitors.
-                        Add some links in buttons or just don't.</small></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-sm-12 margin">
-                    <button type="button" class="previous" href="#gallery_1" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
-                    <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
-                    <button type="button" class="forward" href="#gallery_3" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  <!--end #2 gallery modal-->
-  <!--start #3 gallery modal-->
-          <div id="gallery_3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery_3" aria-hidden="true">
-            <div class="modal-body">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-12 margin">
-                    <button type="button" class="previous" href="#gallery_2" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
-                    <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
-                    <button type="button" class="forward" href="#gallery_1" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
-                  </div>
-                  <div class="col-lg-12">
-                    <div id="carousel_modal_3" class="carousel slide fadeing">
-                      <div class="carousel-inner">
-                        <div class="active item">
-                          <img class="img-responsive" src="http://placehold.it/1140x450" alt="">
-                        </div>
-                        <div class="inactive item">
-                          <img class="img-responsive" src="http://placehold.it/1140x450" alt="">
-                        </div>
-                      </div>
-                      <button class="left carousel-control" href="#carousel_modal_3" data-slide="prev"><i class="icon-chevron-left"></i></button>
-                      <button class="right carousel-control" href="#carousel_modal_3" data-slide="next"><i class="icon-chevron-right"></i></button>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 margin">
-                    <h1>Modal #3</h1>
-                    <p class="lead">Don't forget that you can add anything in this modal! Don't be limited to our demo sample,
-                    be creative :)<br><br>
-                    <small>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality 
-                    and smart defaults.</small></p>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 margin icons">
-                    <div class="row">
-                      <div class="col-lg-2 col-sm-2">
-                        <i class="icon-comments"></i>
-                      </div>
-                      <div class="col-lg-10 col-sm-10">
-                        <a href="#" class="btn btn-more btn-mini">More</a>
-                        <h3>Description</h3>
-                        <p><small>You could probably find few words to describe this project,
-                        and few words to say something important.</small></p>
-                      </div>
-                      <div class="col-lg-2 col-sm-2">
-                        <i class="icon-info-sign"></i>
-                      </div>
-                      <div class="col-lg-10 col-sm-10">
-                        <a href="#" class="btn btn-more btn-mini">More</a>
-                        <h3>Info</h3>
-                        <p><small>Give more informations about this project to your visitors.
-                        Add some links in buttons or just don't.</small></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-sm-12 margin">
-                    <button type="button" class="previous" href="#gallery_2" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-left"></i></button>
-                    <button type="button" class="back" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-circle"></i></button>
-                    <button type="button" class="forward" href="#gallery_1" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><i class="icon-chevron-right"></i></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  <!--end #3 gallery modal-->
         </div>
       </div>
     </section>
-  <!--end second section-->
+  <!--end fourth section-->
   <!--start footer section-->
     <section id="footer">
       <div class="container">
@@ -346,26 +359,11 @@
     </section>
   <!--end footer section-->
   <!--start back to top button-->
-    <a href="#second" class="hidden-sm go-top" data-0="opacity: 0;" data-1000="opacity: 1;">Go Top</a>
+    <a href="#fourth" class="hidden-sm go-top" data-0="opacity: 0;" data-1000="opacity: 1;">Go Top</a>
   <!--end back to top button-->
   <!--start scripts - IMPORTANT: all scripts MUST be loaded after jquery-latest.js as now-->
   <!--latest jQuery-->
-  <!--main bootstrap js-->
-  <!--enable responsive features in IE8-->
-  <!--[if lte IE 8]>
-    <script src="js/respond.min.js"></script>
-  <![endif]-->
-  <!--retina support-->
-  <!--smooth scroll on page-->
-  <!--responsive embed videos-->
-  <!--custom scrollbar-->
-  <!--carousel swipe-->
-  <!--animated elements-->
-    <!--[if lt IE 9]>
-      <script type="text/javascript" src="js/skrollr.ie.min.js"></script>
-    <![endif]-->
-  <!--tour-->
-  <!--work / blog-->
+    
   <!--menu close on select-->
     <script>
       if ($('.navbar-toggle:visible').length) {
@@ -383,8 +381,7 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    </script>
-  <!--custom script-->
+    
   <!--end scripts-->
   </body>
 </html>
