@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220213526) do
-
-  create_table "families", force: :cascade do |t|
-    t.string   "school",         limit: 255
-    t.string   "family_name",    limit: 255
-    t.string   "parent_contact", limit: 255
-    t.integer  "phone",          limit: 4
-    t.string   "email",          limit: 255
-    t.string   "address",        limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20151228000654) do
 
   create_table "lunches", force: :cascade do |t|
     t.date     "date"
@@ -63,9 +52,9 @@ ActiveRecord::Schema.define(version: 20151220213526) do
   create_table "students", force: :cascade do |t|
     t.string   "student_name", limit: 255
     t.integer  "grade",        limit: 4
-    t.integer  "family_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",      limit: 4
   end
 
   create_table "users", force: :cascade do |t|
@@ -81,6 +70,11 @@ ActiveRecord::Schema.define(version: 20151220213526) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "school",                 limit: 255
+    t.string   "family_name",            limit: 255
+    t.string   "parent_contact",         limit: 255
+    t.integer  "phone",                  limit: 4
+    t.string   "address",                limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

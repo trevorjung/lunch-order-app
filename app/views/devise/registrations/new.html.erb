@@ -21,9 +21,35 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.text_field :school %>
+  </div>
+
+  <div class="field">
+    <%= f.label :family_name %><br />
+    <%= f.text_field :family_name, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parent_contact %><br />
+    <%= f.text_field :parent_contact, autocomplete: "off" %>
+  </div>  
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, autocomplete: "off" %>
+  </div>
+
+  <div class="field-address">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autocomplete: "off" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>

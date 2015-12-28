@@ -9,19 +9,19 @@
         <div class="row">
           <div class="col-lg-8 col-offset-2">
             <h1 class="text-center">Star of the Sea: September Lunch</h1>
-            <p class="text-center">Did we mention to you that we like onepage websites? Sure we did! 
+            <p class="text-left">Did we mention to you that we like onepage websites? Sure we did! 
             But now we are extending modals with more options, check it out by clicking on one of the blog items:</p>
           </div>
           <div class="col-lg-12">
             <div class="row">
   <!--start #1 blog-->
-              <div class="col-lg-4 col-sm-4">
+              <div class="col-lg-3 col-sm-3">
                 <div class="thumbnail">
-                  <ul>
+                  <!-- <ul>
                     <li class="readtime"><i class="icon-time"></i><p>3 min read</p></li>
                     <li class="love"><i class="icon-picture"></i><p>Gallery</p></li>
                     <li class="date"><i class="icon-calendar-empty"></i><p>7.10</p></li>
-                  </ul>
+                  </ul> -->
                   <a href="#blog_1" role="button" data-toggle="modal">
                     <img class="img-responsive" src="http://d1doqjmisr497k.cloudfront.net/~/media/Recipe-Photos/McCormick/Dessert/1007x545/Very-Vanilla-Fruit-Salad_1007x545.ashx?vd=20130307T105116" alt=""> </a>
                     <div class="info">
@@ -41,31 +41,64 @@
 
                                 <% end %>
                       </span></p>
-                      <p><small>Cat ipsum dolor sit amet, run in circles sun bathe chew foot intently sniff hand.</small></p>
+                      <p><small></small></p>
                     </div>
                   
                 </div>
               </div>
   <!--start #2 blog-->
-              <div class="col-lg-4 col-sm-4">
+              <div class="col-lg-3 col-sm-3">
                 <div class="thumbnail">
-                  <ul>
+                  <!-- <ul>
                     <li class="readtime"><i class="icon-time"></i><p>5 min read</p></li>
                     <li class="love"><i class="icon-play-sign"></i><p>Video</p></li>
                     <li class="date"><i class="icon-calendar-empty"></i><p>07.11</p></li>
-                  </ul>
+                  </ul> -->
                   <a href="#blog_2" role="button" data-toggle="modal">
-                    <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                    <img class="img-responsive" src="https://mamasrecipesandafew.files.wordpress.com/2012/08/tetsu_09.jpg" alt="">
                     <div class="info">
                       <h4>Joyful</h4>
-                      <p><span>News</span></p>
-                      <p><small>Intently sniff hand sweet beast, run in circles, and sweet beast and sleep on keyboard.</small></p>
+                      <p><span> <%= form_tag '/selected_days/create', method: :post do %>
+                                <div> <p> Extra Drink 
+                                  <%= check_box_tag :drink_extra %> </p>
+                                  
+                                </div>
+                                <div>
+                                  <%= hidden_field_tag :lunch_id, @lunch.id %>
+                                </div>
+
+                                <div>
+                                  <%= submit_tag "Add to Cart!" %>
+                                </div>
+
+                                <% end %>
+                      </span></p>
+                      <p><small> </small></p>
                     </div>
                   </a>
                 </div>
               </div>
   <!--start #3 blog-->
-              <div class="col-lg-4 col-sm-4">
+              <div class="col-lg-3 col-sm-3">
+                <div class="thumbnail">
+                  <ul>
+                    <li class="readtime"><i class="icon-time"></i><p>7 min read</p></li>
+                    <li class="love"><i class="icon-music"></i><p>Music</p></li>
+                    <li class="date"><i class="icon-calendar-empty"></i><p>07.12</p></li>
+                  </ul>
+                  <a href="#blog_3" role="button" data-toggle="modal">
+                    <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                    <div class="info">
+                      <h4>Grumpy</h4>
+                      <p><span>Announcement</span></p>
+                      <p><small>Swat at dog intently sniff hand but find something else more interesting why must they do that.</small></p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            
+
+            <div class="col-lg-3 col-sm-3">
                 <div class="thumbnail">
                   <ul>
                     <li class="readtime"><i class="icon-time"></i><p>7 min read</p></li>
@@ -86,7 +119,7 @@
   <!--new blog items row-->
             <div class="row">
   <!--start #4 blog-->
-              <div class="col-lg-4 col-sm-4">
+              <div class="col-lg-3 col-sm-3">
                 <div class="thumbnail">
                   <ul>
                     <li class="readtime"><i class="icon-time"></i><p>4 min read</p></li>
@@ -104,7 +137,7 @@
                 </div>
               </div>
   <!--start #5 blog-->
-              <div class="col-lg-4 col-sm-4">
+              <div class="col-lg-3 col-sm-3">
                 <div class="thumbnail">
                   <ul>
                     <li class="readtime"><i class="icon-time"></i><p>2 min read</p></li>
@@ -122,7 +155,7 @@
                 </div>
               </div>
   <!--start #6 blog-->
-              <div class="col-lg-4 col-sm-4">
+              <div class="col-lg-3 col-sm-3">
                 <div class="thumbnail">
                   <ul>
                     <li class="readtime"><i class="icon-time"></i><p>6 min read</p></li>
@@ -135,6 +168,25 @@
                       <h4>Wink</h4>
                       <p><span>Library</span></p>
                       <p><small>Play time stare at ceiling stick butt in face chew foot and sun bathe and flop over and under the bed.</small></p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            
+
+            <div class="col-lg-3 col-sm-3">
+                <div class="thumbnail">
+                  <ul>
+                    <li class="readtime"><i class="icon-time"></i><p>7 min read</p></li>
+                    <li class="love"><i class="icon-music"></i><p>Music</p></li>
+                    <li class="date"><i class="icon-calendar-empty"></i><p>07.12</p></li>
+                  </ul>
+                  <a href="#blog_3" role="button" data-toggle="modal">
+                    <img class="img-responsive" src="http://placehold.it/728x560" alt="">
+                    <div class="info">
+                      <h4>Grumpy</h4>
+                      <p><span>Announcement</span></p>
+                      <p><small>Swat at dog intently sniff hand but find something else more interesting why must they do that.</small></p>
                     </div>
                   </a>
                 </div>
