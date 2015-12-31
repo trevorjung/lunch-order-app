@@ -20,7 +20,9 @@ html, body {
   background: orange;
 }
 
-
+.thumbnail ul li {
+  text-align: left;
+}
 
 /*.thumbnail ul li {
   height: 30px;
