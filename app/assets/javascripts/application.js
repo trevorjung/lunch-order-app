@@ -22,7 +22,6 @@
 //= require theme/jquery.gmap.min
 //= require theme/jquery.nicescroll.min
 //= require theme/jquery.touchwipe.min
-//= require theme/modal
 //= require theme/modernizr
 //= require theme/respond.min
 //= require theme/retina
