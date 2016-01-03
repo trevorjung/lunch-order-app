@@ -7,43 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
   <body data-spy="scroll" data-target=".navbar" data-offset='61'>
-    <div id="preloader">
-      <div id="status">&nbsp;</div>
-    </div>
-  <!--start navigation-->
-    <div class="navbar navbar-fixed-top">
-			<div class="container" data-start="padding: 15px 0px;" data-200="padding: 0px 0px;">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="#intro" class="navbar-brand"><img class="img-responsive" src="http://placehold.it/166x40" alt=""></a>
-        <div class="nav-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav pull-right">
-            <li class="active"><a href="http://localhost:3000">Home</a></li>
-            <li><a href="http://localhost:3000/lunches">Entrees</a></li>
-            <li><a href="lunches/#{@lunch.id}">Gallery</a></li>
-            <li><a href="work.html">Schools</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-              <% if current_user %>
-            <li> <%= link_to "Sign Out", "/users/sign_out", method: :delete %> </li>
-            <li><%= current_user.email %></li>
-              <% else %>
-            <li> <%= link_to "Sign In", "/users/sign_in" %> </li>
-            <li> <%= link_to "Sign Up", "/users/sign_up" %> </li>
-              <% end %>
-          </ul>
+  <div class="page-wrap">
+      <div id="preloader">
+        <div id="status">&nbsp;</div>
+      </div>
+    <!--start navigation-->
+      <div class="navbar navbar-fixed-top">
+  			<div class="container" data-start="padding: 15px 0px;" data-200="padding: 0px 0px;">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#intro" class="navbar-brand"><img class="img-responsive" src="http://placehold.it/166x40" alt=""></a>
+          <div class="nav-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav pull-right">
+              <li class="active"><a href="http://localhost:3000">Home</a></li>
+              <li><a href="http://localhost:3000/lunches">Entrees</a></li>
+              <li><a href="lunches/#{@lunch.id}">Gallery</a></li>
+              <li><a href="work.html">Schools</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+                <% if current_user %>
+              <li> <%= link_to "Sign Out", "/users/sign_out", method: :delete %> </li>
+              <li><%= current_user.email %></li>
+                <% else %>
+              <li> <%= link_to "Sign In", "/users/sign_in" %> </li>
+              <li> <%= link_to "Sign Up", "/users/sign_up" %> </li>
+                <% end %>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-
-  <%= yield %>
+    <%= yield %>
   
+  </div>
   <!--start footer section-->
-    <section id="footer">
+    <section class="site-footer" id="footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-sm-6 margin copy">

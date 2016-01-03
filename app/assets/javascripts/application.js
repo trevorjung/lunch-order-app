@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require theme/bootstrap.min
 //= require theme/guideline.main
 //= require theme/html5shiv
@@ -23,6 +22,7 @@
 //= require theme/jquery.nicescroll.min
 //= require theme/jquery.touchwipe.min
 //= require theme/modernizr
+//= require theme/modals
 //= require theme/respond.min
 //= require theme/retina
 //= require theme/skrollr
