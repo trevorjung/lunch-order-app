@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231040130) do
+ActiveRecord::Schema.define(version: 20160107020709) do
 
   create_table "lunches", force: :cascade do |t|
     t.date     "date"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20151231040130) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "month",        limit: 255
+    t.integer  "school_id",    limit: 4
   end
 
   create_table "orders", force: :cascade do |t|
@@ -41,10 +42,14 @@ ActiveRecord::Schema.define(version: 20151231040130) do
   end
 
   create_table "school_lunches", force: :cascade do |t|
-    t.integer  "school_id",  limit: 4
-    t.integer  "lunch_id",   limit: 4
+    t.integer  "school_id",   limit: 4
+    t.integer  "lunch_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "school_name", limit: 255
+    t.string   "entree",      limit: 255
+    t.date     "date"
+    t.string   "month",       limit: 255
   end
 
   create_table "schools", force: :cascade do |t|
@@ -56,11 +61,11 @@ ActiveRecord::Schema.define(version: 20151231040130) do
   create_table "selected_days", force: :cascade do |t|
     t.date     "date"
     t.string   "status",     limit: 255
-    t.integer  "family_id",  limit: 4
     t.integer  "user_id",    limit: 4
     t.integer  "order_id",   limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lunch_id",   limit: 4
   end
 
   create_table "student_users", force: :cascade do |t|

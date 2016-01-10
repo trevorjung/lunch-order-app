@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "lunches#index"
   resources :lunches
+
+  namespace :api do
+    namespace :v1 do
+      resources :lunches
+    end
+  end
+
   resources :selected_days
   resources :orders
 

@@ -20,9 +20,17 @@ html, body {
   background: orange;
 }
 
+ 
 .thumbnail ul li {
   
 }
+
+.selected {
+  border: 5px solid blue;
+}
+
+
+
 
 /*.thumbnail ul li {
   height: 30px;

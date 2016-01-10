@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     tax = calculate_tax(days_selected)
     total = tax + subtotal
 
-    @order = Order.new(
+    @order = Order.create(
       id: params[:id],
       family_id: params[:family_id], 
       family_name: params[:family_name], 
@@ -18,12 +18,7 @@ class OrdersController < ApplicationController
       total: params[:total],
       date: params[:date])
 
-    if @order.save
-      days_selected.update_all(status: "purchased", order_id: @order.id)
-      flash[:success] = "Checkout Complete"
-      redirect_to '/orders/#{order.id}'
-    else
-      render template: "selected_days#index"
+    render json: @order 
   end
 
   def show

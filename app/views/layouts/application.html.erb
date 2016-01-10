@@ -22,9 +22,9 @@
           <a href="#intro" class="navbar-brand"><img class="img-responsive" src="http://placehold.it/166x40" alt=""></a>
           <div class="nav-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav pull-right">
-              <li class="active"><a href="http://localhost:3000">Home</a></li>
-              <li><a href="http://localhost:3000/lunches">Entrees</a></li>
-              <li><a href="lunches/#{@lunch.id}">Gallery</a></li>
+              <li class="active"> <%= link_to "Home", "/" %> </li>
+              <li> <%= link_to "Lunches", "/@lunch.id" %> </li>
+              <li><a href="http://localhost:3000/lunches/@lunch.id">Gallery</a></li>
               <li><a href="work.html">Schools</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="contact.html">Contact</a></li>
@@ -39,8 +39,9 @@
           </div>
         </div>
       </div>
-
-    <%= yield %>
+    <div ng-app="app">
+      <%= yield %>
+    </div>
   
   </div>
   <!--start footer section-->

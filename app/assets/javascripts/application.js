@@ -29,4 +29,6 @@
 //= require theme/skrollr.ie.min
 //= require theme/toucheffects
 //= require theme/custom
+//= require angular
+//= require app
 //= require_tree .
