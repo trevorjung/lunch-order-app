@@ -11,18 +11,18 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def calculate_subtotal(carted_products)
+  def calculate_subtotal(selected_days)
     subtotal = 0
-    carted_products.each do |carted_product|
-      subtotal += (carted_product.product.price * carted_product.quantity)
+    selected_days.each do |selected_day|
+      subtotal += (selected_day.product.price * selected_day.quantity)
     end
     return subtotal
   end
 
-  def calculate_tax(carted_products)
+  def calculate_tax(selected_days)
     tax = 0
-    carted_products.each do |carted_product|
-      tax += (carted_product.product.tax * carted_product.quantity)
+    selected_days.each do |selected_day|
+      tax += (selected_day.product.tax * selected_day.quantity)
     end
     return tax
   end 

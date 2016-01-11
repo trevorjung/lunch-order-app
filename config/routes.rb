@@ -9,6 +9,14 @@ Rails.application.routes.draw do
       resources :lunches
     end
   end
+  resources :users, only: [:show] do
+    resources :students
+  end
+  namespace :api do
+    namespace :v1 do
+      resources :orders
+    end
+  end
 
   resources :selected_days
   resources :orders

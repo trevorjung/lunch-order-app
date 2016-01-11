@@ -7,30 +7,13 @@
 <br>
 <br>
 
-<div ng-controller="lunchesCtrl" ng-init="setup()">
-  <div class="col-lg-8 col-offset-2">
-    <h1 class="text-center">Star of the Sea: September Lunch</h1>
-    <p class="text-left"></p>
-  </div>
+<h2> <%= @lunch.entree %></h2>
 
-  <div ng-repeat="lunch in lunches">
-
-    <div class="col-lg-3 col-md-3" ng-class="{'selected':lunch.toAdd}">
-      
-        <p> {{lunch.entree}}</p>
-        <p> {{lunch.date}}</p>
-        <p> {{lunch.month}}</p>
-        <button ng-click="addLunch(lunch)">Add Lunch</button>
-        <br>
-        <br>
-      </div>
-    </div>
-
-  <button ng-click="purchaseLunch(newLunch)">Purchase</button>
-
-
+  <ul>
+    <li> <%= @lunch.date %></li>
+    <li> <%= @lunch.month %></li>
+    <li> <%= @lunch.salad %></li>
+    <li> <%= @lunch.fruit %></li>
+  </ul>
     
-  </div>
-  
-
-</div>
+    

@@ -22,8 +22,55 @@
       </div>
     </section>
   <!--end intro section-->
+
+  <!-- Start Lunches lIsting Section -->
+  <section id="services">
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1 class="text-center">Star of the Sea: September Menu</h1>
+<br>
+<br>
+<br>
+  <div ng-controller="lunchesCtrl" ng-init="setup()">
+  <div ng-repeat="lunch in lunches track by $index | filter: {month: selectedMonth}">
+    <div class="col-lg-3 col-md-3" ng-class="{'selected':lunch.added}">
+  
+        <p> {{lunch.entree}}</p>
+        <p> {{lunch.date}}</p>
+        <p> {{lunch.month}}</p>
+        <button ng-click="addLunch(lunch)">Add Lunch</button>
+        <br>
+        <br>
+      
+      <button ng-click=""> Previous Month</button>
+      <button ng-click=""> Next Month</button>
+    </div>
+  </div>
+
+  <button ng-click="makeOrder(newOrder)">Purchase Selected Items </button>
+
+
+    
+  </div>
+  
+
+</div>
+
+
+      
+      
+    <!-- </section> --> -->
+
+  <!-- End Lunches Listing -->
   <!--start services section-->
-    <section id="services">
+  <!--   <section id="services">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-sm-6">
@@ -56,14 +103,14 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   <!--end services section-->
   <!--start customers section-->
     <section id="customers">
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <h3> Currently Serving: </h3>
+            <h3>  </h3>
             <a href="#" target="blank"><img class="img-responsive" src="http://www.sosschool.org/images/sos-logo-header.png" alt=""></a>
           </div>
           <div class="col-lg-3">

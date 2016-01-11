@@ -22,6 +22,7 @@ class LunchesController < ApplicationController
   end
 
   def show
+    @lunch = Lunch.find(params[:id])
     @lunches = Lunch.all
     @school_lunch = SchoolLunch.where(school_id: params[:school_id], month: params[:month])
   end
