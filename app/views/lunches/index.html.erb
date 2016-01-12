@@ -35,11 +35,13 @@
 <br>
 
 <h1 class="text-center">Star of the Sea: September Menu</h1>
+      <button class="text-left" ng-click="previousMonth"> Previous Month</button>
+      <button class="text-right" ng-click="nextMonth"> Next Month</button>
 <br>
 <br>
 <br>
   <div ng-controller="lunchesCtrl" ng-init="setup()">
-  <div ng-repeat="lunch in lunches track by $index | filter: {month: selectedMonth}">
+  <div ng-repeat="lunch in lunches">
     <div class="col-lg-3 col-md-3" ng-class="{'selected':lunch.added}">
   
         <p> {{lunch.entree}}</p>
@@ -49,12 +51,10 @@
         <br>
         <br>
       
-      <button ng-click=""> Previous Month</button>
-      <button ng-click=""> Next Month</button>
     </div>
   </div>
 
-  <button ng-click="makeOrder(newOrder)">Purchase Selected Items </button>
+  <button ng-click="makeOrder()">Purchase Selected Items </button>
 
 
     
@@ -66,7 +66,7 @@
 
       
       
-    <!-- </section> --> -->
+    <!-- </section> --> 
 
   <!-- End Lunches Listing -->
   <!--start services section-->

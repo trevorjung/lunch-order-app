@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160110175716) do
+ActiveRecord::Schema.define(version: 20160112040957) do
 
   create_table "lunches", force: :cascade do |t|
     t.date     "date"
@@ -31,12 +31,12 @@ ActiveRecord::Schema.define(version: 20160110175716) do
   create_table "orders", force: :cascade do |t|
     t.string   "student_name", limit: 255
     t.decimal  "price",                    precision: 10
-    t.decimal  "tax",                      precision: 10
-    t.decimal  "subtotal",                 precision: 10
-    t.decimal  "total",                    precision: 10
+    t.decimal  "tax",                      precision: 10, scale: 3
+    t.decimal  "subtotal",                 precision: 10, scale: 3
+    t.decimal  "total",                    precision: 10, scale: 3
     t.date     "date"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.integer  "user_id",      limit: 4
     t.string   "email",        limit: 255
     t.integer  "school_id",    limit: 4
