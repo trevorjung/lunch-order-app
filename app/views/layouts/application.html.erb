@@ -23,11 +23,7 @@
           <div class="nav-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav pull-right">
               <li class="active"> <%= link_to "Home", "/" %> </li>
-              <li> <%= link_to "Lunches", "/@lunch.id" %> </li>
-              <li><a href="http://localhost:3000/lunches/@lunch.id">Gallery</a></li>
-              <li><a href="work.html">Schools</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
+             
                 <% if current_user %>
               <li> <%= link_to "Sign Out", "/users/sign_out", method: :delete %> </li>
               <li><%= current_user.email %></li>
@@ -49,14 +45,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-sm-6 margin copy">
-						<p>2013 &copy; Awerest - interactive studio</p>
+						<p>| Trevor Jung Production |</p>
 					</div>
-					<div class="col-lg-4 col-sm-6 col-offset-2 margin social">
+					<!-- <div class="col-lg-4 col-sm-6 col-offset-2 margin social">
 						<a class="facebook" href="http://www.facebook.com/awerest" target="_blank">Facebook</a> / 
 						<a class="twitter" href="http://www.twitter.com/awerest" target="_blank">Twitter</a> / 
 						<a class="google" href="https://plus.google.com/u/0/104533843132286032110/posts" target="_blank">Google+</a> / 
 						<a class="instagram" href="http://www.instagram.com/awerest" target="_blank">Instagram</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>

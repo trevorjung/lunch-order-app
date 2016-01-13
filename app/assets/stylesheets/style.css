@@ -21,19 +21,46 @@ html, body {
 }
 
  
-.thumbnail ul li {
-  
-}
-
 .selected {
   border: 5px solid blue;
 }
 
-.body {
-  background-image: Bamboo-Natural-Finish-1280x1024.jpg;
+.text-center {
+  color: blue;
+
+}
+ 
+.img-responsive {
+  border-radius: 25%;
 }
 
+#style h1 {
+  padding: 60px;
+  margin: 10px;
+}
 
+#style h3 {
+  color: blue;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1;
+  margin-top: 20px 0;
+  margin-left: 50px 0;
+  margin-right: 50px 0; 
+  padding: 60px 0px;
+  text-align: center;
+  -webkit-text-stroke: 0.03em #25272B;
+}
+
+#style h5, #details h5 {
+  color: #bbbdc0;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
 
 
 /*.thumbnail ul li {

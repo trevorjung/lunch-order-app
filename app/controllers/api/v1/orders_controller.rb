@@ -11,12 +11,14 @@ class Api::V1::OrdersController < ApplicationController
       # price: params[:price],
       tax: params[:tax],
       subtotal: params[:subtotal],
-      total: params[:total])
-      # date: params[:date])
+      total: params[:total],
+      date: params[:date])
       # lunch_id: params[:lunch_id])
 
     params[:lunches].each do |lunch|
-      @selected_day = SelectedDay.create(lunch_id: lunch[:id], order_id: @order.id)
+      @selected_day = SelectedDay.create(lunch_id: lunch[:id], 
+        order_id: @order.id,
+        date: lunch[:date])
     end
 
     # puts params[:lunches]

@@ -5,7 +5,7 @@
       <div id="carousel_intro" class="carousel slide fadeing">
         <div class="carousel-inner">
           <div class="active item" id="slide_1" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
-            <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">Made with <i class="icon-heart"></i> and <i class="icon-coffee"></i> at awerest</h1>
+            <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">J&O Lunch <i class="icon-heart"></i>  <i class="icon-coffee"></i> </h1>
           </div>
           <div class="inactive item" id="slide_2" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
             <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">Make easy <i class="icon-magic"></i> animation</h1>
@@ -22,45 +22,70 @@
       </div>
     </section>
   <!--end intro section-->
+<!--start services section-->
+    <section id="style">
+      <div class="container">
+        <h1> How to Start? </h1>
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <i class="icon-tablet fancy" data-bottom-center="opacity: 0;" data-bottom-bottom="opacity: 1;"></i>
+            <h3>Create An Account </h3>
+            <h5><%= link_to "Sign Up", "/users/sign_up" %></h5>
 
+            <p><small> 
+
+
+               </small></p>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <i class="icon-cogs fancy" data-bottom-center="opacity: 0;" data--60-bottom-bottom="opacity: 1;"></i>
+            <h3>Select Your Child's School & Month</h3>
+            <h5></h5>
+            <p><small></small></p>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <i class="icon-eye-open fancy" data-bottom-center="opacity: 0;" data--120-bottom-bottom="opacity: 1;"></i>
+            <h3>Pick the Lunches you want</h3>
+            <h5></h5>
+            <p><small></small></p>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <i class="icon-ambulance fancy" data-bottom-center="opacity: 0;" data--180-bottom-bottom="opacity: 1;"></i>
+            <h3>Order and Enjoy</h3>
+            <h5></h5>
+            <p><small></small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!--end services section-->
   <!-- Start Lunches lIsting Section -->
   <section id="services">
   <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <h1 class="text-center">Star of the Sea: September Menu</h1>
-      <button class="text-left" ng-click="previousMonth"> Previous Month</button>
-      <button class="text-right" ng-click="nextMonth"> Next Month</button>
-<br>
-<br>
-<br>
   <div ng-controller="lunchesCtrl" ng-init="setup()">
+      <button class="text-left" ng-click="previousMonth()"> Previous Month</button>
+      <button class="text-right" ng-click="nextMonth()"> Next Month</button>
+<br>
+<br>
+<br>
   <div ng-repeat="lunch in lunches">
-    <div class="col-lg-3 col-md-3" ng-class="{'selected':lunch.added}">
-  
+    <div class="col-lg-3 col-sm-3" ng-class="{'selected':lunch.added}">
+        <img class="img-responsive" src="https://bgcdn-babygizmocompany.netdna-ssl.com/wp-content/uploads/2015/07/Strawberries.jpg" alt="">
         <p> {{lunch.entree}}</p>
         <p> {{lunch.date}}</p>
         <p> {{lunch.month}}</p>
         <button ng-click="addLunch(lunch)">Add Lunch</button>
-        <br>
+        <br> 
         <br>
       
     </div>
   </div>
 
-  <button ng-click="makeOrder()">Purchase Selected Items </button>
+        <button ng-click="makeOrder()">Purchase Selected Items </button>
 
-
-    
   </div>
-  
-
 </div>
 
 
@@ -70,7 +95,7 @@
 
   <!-- End Lunches Listing -->
   <!--start services section-->
-  <!--   <section id="services">
+    <!-- <section id="services_2">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-sm-6">
@@ -106,7 +131,7 @@
     </section> -->
   <!--end services section-->
   <!--start customers section-->
-    <section id="customers">
+    <!-- <section id="customers">
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
@@ -128,12 +153,12 @@
           <div class="col-lg-2">
             <a href="#" target="blank"><img class="img-responsive" src="http://placehold.it/170x50" alt=""></a>
           </div> -->
-        </div>
+        <!-- </div>
       </div>
-    </section>
+    </section> --> 
   <!--end customers section-->
   <!--start details section-->
-    <section id="details">
+    <!-- <section id="details">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-sm-4">
@@ -210,7 +235,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   <!--end details section-->
   <!--start footer section-->
     
@@ -236,16 +261,16 @@
     </script>
   <!--google analytics-->
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'Your Google Analytics Code']);
-      _gaq.push(['_trackPageview']);
+    //   var _gaq = _gaq || [];
+    //   _gaq.push(['_setAccount', 'Your Google Analytics Code']);
+    //   _gaq.push(['_trackPageview']);
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
+    //   (function() {
+    //     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    //     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    //     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    //   })();
+    // </script>
   <!--custom script-->
     
   <!--end scripts-->

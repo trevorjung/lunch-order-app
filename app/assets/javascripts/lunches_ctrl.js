@@ -2,38 +2,75 @@
   "use strict";
 
   angular.module("app").controller("lunchesCtrl", function($scope, $http) {
-    
-    // $scope.selectedMonth = getMonth() +1;
 
-    // $scope.previousMonth = function() {
-    //   $scope.selectedMonth -1;
-    // }
-
-    // $scope.nextMonth = function () {
-    //   $scope.selectedMonth +1;
-    // }
+    $scope.selectedMonth = parseInt(new Date().getMonth()) + 1;
 
     $scope.setup = function() {
       $http.get("/api/v1/lunches.json").then(function(response) {
-        $scope.lunches = response.data;
-        console.log(response.data);
+        // $scope.lunches = response.data;
+        $scope.original_data = response.data;
+
+        $scope.getLunchesForMonth();
+
+        // console.log(response.data);
       });
     } 
+    
+    $scope.getLunchesForMonth = function() {
+      $scope.lunches = [];
+      for (var i = 0; i < $scope.original_data.length; i++) {
+          if (parseInt($scope.original_data[i].date.substring(5,7)) === parseInt(($scope.selectedMonth))) {
+            $scope.lunches.push($scope.original_data[i]);
+          }
+          else {
+          }
+        }
+    }
+
+
+    $scope.previousMonth = function() {
+      console.log($scope.selectedMonth);
+      if ($scope.selectedMonth === 0) {
+        $scope.selectedMonth = 11;
+      } else {
+      $scope.selectedMonth -= 1;
+      }
+      $scope.getLunchesForMonth();  
+    }
+        
+
+    $scope.nextMonth = function () {
+      if ($scope.selectedMonth === 11) {
+        $scope.selectedMonth = 0;
+        console.log($scope.selectedMonth);
+      } else {
+      $scope.selectedMonth += 1;
+      console.log($scope.selectedMonth);
+      }
+      $scope.getLunchesForMonth();
+    }
+
+    // $scope.criteriaMatch = function(lunch) {
+    //   if (lunch) {
+    //     console.log(lunch);
+    //     console.log(lunch.date.charAt(6));
+    //     console.log($scope.selectedMonth);
+    //     return lunch.date.charAt(6) === $scope.selectedMonth;    
+    //   }
+    // }
 
     $scope.selected_lunches = [];
+    
     
     $scope.selectedLunch = function(lunch) {
       lunch.added = !lunch.added;
     }  
 
+    
     $scope.addLunch = function(lunch, index) {
         $scope.selectedLunch(lunch);
       if (lunch.added) {
-        // lunch.lunch_id = lunch.id
-        // lunch.user_id = 
-      
         $scope.selected_lunches.push(lunch);
-        
       } 
       else {
         $scope.selected_lunches.splice(index,1);
@@ -43,13 +80,14 @@
     }
         
         
+        
     
-    $scope.deleteOrder = function(index, newOrder) {
-      $http.delete("/api/v1/orders/" + newOrder.id + ".json").then(function(response) {
-        $scope.selected_lunches.splice(index,1);
-        console.log(index);
-        });
-    }
+    // $scope.deleteOrder = function(index, newOrder) {
+    //   $http.delete("/api/v1/orders/" + newOrder.id + ".json").then(function(response) {
+    //     $scope.selected_lunches.splice(index,1);
+    //     console.log(index);
+    //     });
+    // }
     
     $scope.total = 0
     $scope.subtotal = 0
@@ -68,16 +106,8 @@
         var total = $scope.calculateTotal();
 
         var newOrder = {
-          // email: email,
-          // date: lunch.date,
           lunches: $scope.selected_lunches,
-          // price: 4.5
-          // entree: entree,
-          // school_name: school_name,
-          // lunch_id: lunch.id
-          // student_name: lunch.,
-          // user_id: current_user.id
-          // price: t
+          // school_id: lunch.school_id,
           tax: tax,
           subtotal: subtotal,
           total: total
