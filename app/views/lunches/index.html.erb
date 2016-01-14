@@ -61,32 +61,29 @@
   <!--end services section-->
   <!-- Start Lunches lIsting Section -->
   <section id="services">
-  <br>
+    
 
-<h1 class="text-center">Star of the Sea: September Menu</h1>
-  <div ng-controller="lunchesCtrl" ng-init="setup()">
+    <h1 class="text-center">Star of the Sea: September Menu</h1>
+    <div ng-controller="lunchesCtrl" ng-init="setup()">
       <button class="text-left" ng-click="previousMonth()"> Previous Month</button>
       <button class="text-right" ng-click="nextMonth()"> Next Month</button>
-<br>
-<br>
-<br>
-  <div ng-repeat="lunch in lunches">
-    <div class="col-lg-3 col-sm-3" ng-class="{'selected':lunch.added}">
-        <img class="img-responsive" src="https://bgcdn-babygizmocompany.netdna-ssl.com/wp-content/uploads/2015/07/Strawberries.jpg" alt="">
-        <p> {{lunch.entree}}</p>
-        <p> {{lunch.date}}</p>
-        <p> {{lunch.month}}</p>
-        <button ng-click="addLunch(lunch)">Add Lunch</button>
-        <br> 
-        <br>
-      
+      <div ng-repeat="lunch in lunches">
+        <div class="col-lg-3 col-sm-3 lunch-height" ng-class="{'selected':lunch.added}">
+          <img class="img-responsive" src="https://bgcdn-babygizmocompany.netdna-ssl.com/wp-content/uploads/2015/07/Strawberries.jpg" alt="">
+          <p> {{lunch.entree}}</p>
+          <p> {{lunch.date}}</p>
+          <p> {{lunch.month}}</p>
+          <button ng-show="!lunch.added" ng-click="addLunch(lunch)">Add Lunch</button>
+          <button ng-show="lunch.added" ng-click="addLunch(lunch)">Remove Lunch</button>
+          
+          
+        </div>
+      </div>
+
+      <button ng-click="makeOrder()">Purchase Selected Items </button>
+
     </div>
   </div>
-
-        <button ng-click="makeOrder()">Purchase Selected Items </button>
-
-  </div>
-</div>
 
 
       

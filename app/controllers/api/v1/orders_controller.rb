@@ -18,7 +18,12 @@ class Api::V1::OrdersController < ApplicationController
     params[:lunches].each do |lunch|
       @selected_day = SelectedDay.create(lunch_id: lunch[:id], 
         order_id: @order.id,
+        status: 'selected',
         date: lunch[:date])
+    
+    # flash[:message] = "Added to Checkout"
+    # redirect_to "/"  
+
     end
 
     # puts params[:lunches]

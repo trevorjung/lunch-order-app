@@ -30,8 +30,8 @@
 
     $scope.previousMonth = function() {
       console.log($scope.selectedMonth);
-      if ($scope.selectedMonth === 0) {
-        $scope.selectedMonth = 11;
+      if ($scope.selectedMonth === 1) {
+        $scope.selectedMonth = 12;
       } else {
       $scope.selectedMonth -= 1;
       }
@@ -40,8 +40,8 @@
         
 
     $scope.nextMonth = function () {
-      if ($scope.selectedMonth === 11) {
-        $scope.selectedMonth = 0;
+      if ($scope.selectedMonth === 12) {
+        $scope.selectedMonth = 1;
         console.log($scope.selectedMonth);
       } else {
       $scope.selectedMonth += 1;
@@ -59,11 +59,15 @@
     //   }
     // }
 
+
+
+
     $scope.selected_lunches = [];
     
     
     $scope.selectedLunch = function(lunch) {
       lunch.added = !lunch.added;
+      // console.log(lunch.added);
     }  
 
     
