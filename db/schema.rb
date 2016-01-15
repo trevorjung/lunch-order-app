@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112040957) do
+ActiveRecord::Schema.define(version: 20160114050947) do
 
   create_table "lunches", force: :cascade do |t|
     t.date     "date"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160112040957) do
     t.datetime "updated_at"
     t.string   "month",        limit: 255
     t.integer  "school_id",    limit: 4
+    t.text     "description",  limit: 65535
   end
 
   create_table "orders", force: :cascade do |t|

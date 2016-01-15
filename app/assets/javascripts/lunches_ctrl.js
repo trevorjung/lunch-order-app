@@ -12,6 +12,8 @@
 
         $scope.getLunchesForMonth();
 
+        $scope.month();
+
         // console.log(response.data);
       });
     } 
@@ -27,6 +29,24 @@
         }
     }
 
+    $scope.month = function() {
+      var months = {
+        1: "January",
+        2: "February",
+        3: "March",
+        4: "April", 
+        5: "May",
+        6: "June",
+        7: "July",
+        8: "August",
+        9: "September",
+        10: "October",
+        11: "November",
+        12: "December"
+      }
+      $scope.returnedMonth = months[$scope.selectedMonth];
+      // console.log($scope.returnedMonth);
+    }
 
     $scope.previousMonth = function() {
       console.log($scope.selectedMonth);
@@ -35,7 +55,8 @@
       } else {
       $scope.selectedMonth -= 1;
       }
-      $scope.getLunchesForMonth();  
+      $scope.getLunchesForMonth(); 
+      $scope.month(); 
     }
         
 
@@ -48,6 +69,7 @@
       console.log($scope.selectedMonth);
       }
       $scope.getLunchesForMonth();
+      $scope.month();
     }
 
     // $scope.criteriaMatch = function(lunch) {
@@ -75,6 +97,12 @@
         $scope.selectedLunch(lunch);
       if (lunch.added) {
         $scope.selected_lunches.push(lunch);
+        $scope.calculateTax();
+        $scope.calculateSubtotal();
+        $scope.calculateTotal();
+        console.log($scope.tax);
+        console.log($scope.subtotal);
+        console.log($scope.total);
       } 
       else {
         $scope.selected_lunches.splice(index,1);
