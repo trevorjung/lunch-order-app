@@ -20,9 +20,15 @@ html, body {
   background: orange;
 }
 
+.wood {
+  background: pink;
+}
  
 .selected {
-  border: 5px solid orange !important ;
+  /*border: 5px solid orange !important ;*/
+  border-style: outset;
+  opacity: 0.4;
+
   
 }
 
@@ -69,13 +75,16 @@ p {
 }
 
 .lunch-height {
-  height: 500px;
+  height: 400px;
   /*border: 3px solid #4f74e3;*/
   padding: 30px;
 }
 
 .menu {
-  background-image: url("theme_img_1.jpg");
+  background-image: url("theme/theme_img_1.jpg");
+  text-align: center;
+  background-color: red;
+  padding: 30px;
 }
 
 #footer {
@@ -162,7 +171,6 @@ p {
     -moz-transition: all 0.3s;
     transition: all 0.3s;
 }
-
 .modal.fade.in .modal-dialog {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -172,17 +180,14 @@ p {
     transform: translate3d(0, -300px, 0);
     opacity: 1;
 }
-
 .modal-header {
   font-family: "Bree Serif";
   background-color: #F6F5F5;
   border-radius: 5px;
 }
-
 .modal-body {
   font-size: 16px;
 }
-
 p {
   margin: 50px;
 }

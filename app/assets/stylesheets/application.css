@@ -12,6 +12,7 @@
  *
  *= require theme/bootstrap.min
  *= require theme/style
+ *= require sticky
  *= require_tree .
  *= require_self
  */

@@ -30,5 +30,6 @@
 //= require theme/toucheffects
 //= require theme/custom
 //= require angular
+//= require sticky
 //= require app
 //= require_tree .

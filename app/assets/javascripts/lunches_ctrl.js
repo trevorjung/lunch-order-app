@@ -100,18 +100,26 @@
         $scope.calculateTax();
         $scope.calculateSubtotal();
         $scope.calculateTotal();
+        
         console.log($scope.tax);
         console.log($scope.subtotal);
         console.log($scope.total);
       } 
       else {
         $scope.selected_lunches.splice(index,1);
+        $scope.calculateTax();
+        $scope.calculateSubtotal();
+        $scope.calculateTotal();
         
       }
         console.log($scope.selected_lunches);
     }
-        
-        
+    
+    
+    // $scope.setDateAndEntree = function(lunch) {
+    //   $scope.selectedDate = lunch.date
+    //   $scope.selectedEntree = lunch.entree
+    // }
         
     
     // $scope.deleteOrder = function(index, newOrder) {

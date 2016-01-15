@@ -11,22 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114050947) do
+ActiveRecord::Schema.define(version: 20160115025659) do
 
   create_table "lunches", force: :cascade do |t|
     t.date     "date"
-    t.boolean  "vegetarian"
-    t.string   "entree",       limit: 255
-    t.string   "drink",        limit: 255
-    t.integer  "entree_extra", limit: 4
-    t.integer  "drink_extra",  limit: 4
-    t.string   "salad",        limit: 255
-    t.string   "fruit",        limit: 255
+    t.string   "entree",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "month",        limit: 255
-    t.integer  "school_id",    limit: 4
-    t.text     "description",  limit: 65535
+    t.string   "month",       limit: 255
+    t.integer  "school_id",   limit: 4
+    t.text     "description", limit: 65535
   end
 
   create_table "orders", force: :cascade do |t|

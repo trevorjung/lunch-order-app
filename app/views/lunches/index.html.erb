@@ -54,72 +54,100 @@
 
 <div ng-controller="lunchesCtrl" ng-init="setup()">
   <% if user_signed_in? %>
-  <div class="panel panel-default">
-    <!-- Default panel contents -->
-    <div class="panel-heading">Checkout</div>
-    <div class="panel-body" class="text-left">
-    <p>Tax: {{tax}} </p>
-      <p>Subtotal: {{subtotal}}</p>
-      <p>Total: {{total}}</p>
-    </div>
+  <div class="container-fluid">
 
-    <!-- Table -->
-    <table class="table">
-      <tr>
-        <th>#</th>
-        <th>Date</th>
-        <th>Entree</th>
-      </tr>
-      <tr>
-
-      </tr>
-    </table>
   </div>
 
-  <section id="services">
-    <h1 class="text-center">Star of the Sea: {{returnedMonth}} Menu</h1>
 
-    <button type="button" class="btn btn-default btn-lg" class="text-left" ng-click="previousMonth()">
-      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous Month
-    </button>
-    <button type="button" class="btn btn-default btn-lg" class="text-right" ng-click="nextMonth()"> Next Month</button>
-    <div ng-repeat="lunch in lunches">
-      <div class="col-lg-3 col-sm-3 lunch-height" ng-class="{'selected':lunch.added}">
-        <img class="img-responsive" src="https://bgcdn-babygizmocompany.netdna-ssl.com/wp-content/uploads/2015/07/Strawberries.jpg" alt="">
-        <p> {{lunch.entree}} </p>
-        <p> {{lunch.date}} </p>
-        <p> {{lunch.description}} </p>
-        <button type="button" class="btn btn-default btn-lg" ng-show="!lunch.added" ng-click="addLunch(lunch)">Add Lunch</button>
-        <button type="button" class="btn btn-default btn-lg" ng-show="lunch.added" ng-click="addLunch(lunch)">Remove Lunch</button>
+  <div class="container-fluid wood">
+    
+    <div class="row">
+      <div class="menu col-lg-3">
 
-
+    <div sticky class="panel panel-info" class="checkout" >
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+        <h3>Checkout</h3>
       </div>
-    </div>
+      <div class="panel-body" class="text-left">
+        <p>Number of Lunches: {{selected_lunches.length}} </p>
+        <p>Tax: {{tax | currency}} </p>
+        <p>Subtotal: {{subtotal | currency}}</p>
+        <p>Total: {{total | currency}}</p>
+      </div>
 
-    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#demo" ng-click="makeOrder()">Purchase Selected Items </button>
-    <div class="modal fade" id="demo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-            </button>
-            <h2 class="modal-title">Your Order Summary</h2>
-          </div>
-          <div class="modal-body">
-            <table>
-              <th>#</th>
+      <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#demo" ng-click="makeOrder()">Purchase Selected Items </button>
+      <!-- Table -->
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <tr>
               <th>Date</th>
               <th>Entree</th>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+            </tr>
+            <tr ng-repeat="lunch in selected_lunches">
+              <td>{{lunch.date}}</td>
+              <td>{{lunch.entree}}</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="menu col-lg-9">
+        <h1 class="text-center">Star of the Sea: {{returnedMonth}} Menu</h1>
+
+        <button type="button" class="btn btn-default btn-lg" class="text-left" ng-click="previousMonth()">Previous Month</button>
+        <button type="button" class="btn btn-default btn-lg" class="text-right" ng-click="nextMonth()"> Next Month</button>
+        <div class="wood">
+          <div ng-repeat="lunch in lunches" class="col-lg-3 col-sm-3 lunch-height" ng-class="{'selected':lunch.added}">
+            <img class="img-responsive" src="https://bgcdn-babygizmocompany.netdna-ssl.com/wp-content/uploads/2015/07/Strawberries.jpg" alt="">
+            <p> {{lunch.entree}} </p>
+            <p> {{lunch.date}} </p>
+            <p> {{lunch.description}} </p>
+            <button type="button" class="btn btn-default btn-lg" ng-show="!lunch.added" ng-click="addLunch(lunch)">Add Lunch</button>
+            <button type="button" class="btn btn-default btn-lg" ng-show="lunch.added" ng-click="addLunch(lunch)">Remove Lunch</button>
+          </div>
+        </div>
+      </div> 
+    </div>
+
   </div>
-  <% end %>
+</div>
+
+
+<div class="modal fade" id="demo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+        <h2 class="modal-title">Your Order Summary</h2>
+      </div>
+      <div class="modal-body">
+        <table>
+          <th>#</th>
+          <th>Date</th>
+          <th>Entree</th>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
 </div>
 
 
