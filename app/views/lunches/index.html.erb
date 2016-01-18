@@ -4,84 +4,150 @@
 </head>
 <!--start intro section-->
 <section id="intro">
-  <div id="carousel_intro" class="carousel slide fadeing">
-    <div class="carousel-inner">
-      <div class="active item" id="slide_1" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
-        <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">J&O Lunch <i class="icon-heart"></i>  <i class="icon-coffee"></i> </h1>
+  <!-- <div class="container"> -->
+    <div id="carousel_intro" class="carousel slide fadeing">
+      <div class="carousel-inner">
+        <div class="active item" id="slide_1" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
+          <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">J&O Lunch <i class="icon-heart"></i>  <i class="icon-coffee"></i> </h1>
+        </div>
+        <div class="inactive item" id="slide_2" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
+          <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">Make easy <i class="icon-magic"></i> animation</h1>
+        </div>
+        <div class="inactive item" id="slide_3" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
+          <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">Ready for <i class="icon-rocket"></i> when you are</h1>
+        </div>
       </div>
-      <div class="inactive item" id="slide_2" data-start="background-position: center 0px;" data-1440="background-position: center -250px;">
-        <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">Make easy <i class="icon-magic"></i> animation</h1>
-      </div>
-      <div class="inactive item" id="slide_3" data-start="backgroun`d-position: center 0px;" data-1440="background-position: center -250px;">
-        <h1 data-start="opacity:1; top: 45%;" data-250="opacity: 0; top: 10%;">Ready for <i class="icon-rocket"></i> when you are</h1>
-      </div>
+      <button class="left carousel-control" href="#carousel_intro" data-slide="prev" data-start="opacity: 0.4; left: 0%;" data-250="opacity:0; left: 5%;"><i class="icon-chevron-left"></i></button>
+      <button class="right carousel-control" href="#carousel_intro" data-slide="next" data-start="opacity: 0.4; right: 0%;" data-250="opacity:0; right: 5%;"><i class="icon-chevron-right"></i></button>
     </div>
-    <button class="left carousel-control" href="#carousel_intro" data-slide="prev" data-start="opacity: 0.6; left: 0%;" data-250="opacity:0; left: 5%;"><i class="icon-chevron-left"></i></button>
-    <button class="right carousel-control" href="#carousel_intro" data-slide="next" data-start="opacity: 0.6; right: 0%;" data-250="opacity:0; right: 5%;"><i class="icon-chevron-right"></i></button>
-  </div>
-  <div class="hidden-sm more">
-    <a href="#services" class="btn btn-cool squared" data-start="opacity:1; margin-top: 0%;" data-150="opacity:0; margin-top: -10%;"><i class="icon-angle-down"></i> See more</a>
-  </div>
+    <div class="hidden-sm more">
+      <a href="#services" class="btn btn-cool squared" data-start="opacity:1; margin-top: 0%;" data-150="opacity:0; margin-top: -10%;"><i class="icon-angle-down"></i> See more</a>
+    </div>
+  <!-- </div> -->
 </section>
 <!--end intro section-->
 <!--start welcome section-->
-<div class="jumbotron">
-  <% if user_signed_in? %>
-  <h1>Welcome back</h1>
-  <p class="text-center"class="lead">
-    Please Select a Student to Continue
-  </p>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <% if user_signed_in? %>
+    <h1>Welcome back</h1>
+    <p class="text-center"class="lead">
+      Please Select a Student to Continue
+    </p>
+    
+  <div ng-controller="lunchesCtrl" ng-init="setup()">
 
-  <% else %>
-  <h1>Welcome</h1>
-  <p class="text-center" class="lead">
-    Sign in or Sign up to Continue
-  </p>
+    <button ng-repeat="student in student_data" ng-click="school(student.id, student_data)"> {{student.student_name}}</button>
 
-  <div class="row-fluid">
-    <div class="span6 pull-right">
-      <%= link_to "Sign In", new_user_session_path, :class => "btn btn-large btn-success" %>
+    <% else %>
+    <h1>Welcome</h1>
+    <p class="text-center" class="lead">
+      Sign in or Sign up to Continue
+    </p>
+
+    <div class="row-fluid">
+      <div class="span6 pull-right">
+        <%= link_to "Sign In", new_user_session_path, :class => "btn btn-large btn-success" %>
+      </div>
+      <div class="span6 pull-left">
+        <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-large btn-success" %>
+      </div>
     </div>
-    <div class="span6 pull-left">
-      <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-large btn-success" %>
-    </div>
-  </div>
   <% end %>
+  </div>
 </div>
 
-<!--end welcome section-->
-<!-- Start Lunches lIsting Section -->
+  <!--end welcome section-->
+  <!-- Start Lunches lIsting Section -->
 
-<div ng-controller="lunchesCtrl" ng-init="setup()">
-  <% if user_signed_in? %>
-  <div class="container-fluid">
+  <div ng-controller="lunchesCtrl" ng-init="setup()">
+    <% if user_signed_in? %>
+    
 
+
+    <div class="container">
+
+    </div>
+
+
+    <div class="container-fluid wood">
+
+      <div class="row">
+        <div class="menu col-lg-3">
+
+          <div sticky class="panel panel-info" class="checkout" >
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+              <h3>Checkout</h3>
+            </div>
+            <div class="panel-body" class="text-left">
+              <p>Number of Lunches: {{selected_lunches.length}} </p>
+              <p>Tax: {{tax | currency}} </p>
+              <p>Subtotal: {{subtotal | currency}}</p>
+              <p>Total: {{total | currency}}</p>
+            </div>
+
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#demo" ng-click="makeOrder()">Purchase Selected Items </button>
+            <!-- Table -->
+            <div class="row">
+              <div class="col-md-6">
+                <table class="table">
+                  <tr>
+                    <th>Date</th>
+                    <th>Entree</th>
+                  </tr>
+                  <tr ng-repeat="lunch in selected_lunches">
+                    <td>{{lunch.date}}</td>
+                    <td>{{lunch.entree}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="menu col-lg-9">
+          <h1 class="text-center">{{returnedSchool}}: {{returnedMonth}} Menu</h1>
+
+          <button type="button" class="btn btn-default btn-lg" class="text-left" ng-click="previousMonth()">Previous Month</button>
+          <button type="button" class="btn btn-default btn-lg" class="text-right" ng-click="nextMonth()"> Next Month</button>
+          <div class="wood">
+            <div ng-repeat="lunch in lunches" class="col-lg-3 col-sm-3 lunch-height" ng-class="{'selected':lunch.added}">
+              <img src="#image_1" class="img-responsive" alt="">
+              <p> {{lunch.entree}} </p>
+              <p> {{lunch.date}} </p>
+              <p> {{lunch.description}} </p>
+              <button type="button" class="btn btn-default btn-lg" ng-show="!lunch.added" ng-click="addLunch(lunch)">Add Lunch</button>
+              <button type="button" class="btn btn-default btn-lg" ng-show="lunch.added" ng-click="addLunch(lunch)">Remove Lunch</button>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+    </div>
   </div>
 
 
-  <div class="container-fluid wood">
-    
-    <div class="row">
-      <div class="menu col-lg-3">
-
-    <div sticky class="panel panel-info" class="checkout" >
-      <!-- Default panel contents -->
-      <div class="panel-heading">
-        <h3>Checkout</h3>
-      </div>
-      <div class="panel-body" class="text-left">
-        <p>Number of Lunches: {{selected_lunches.length}} </p>
-        <p>Tax: {{tax | currency}} </p>
-        <p>Subtotal: {{subtotal | currency}}</p>
-        <p>Total: {{total | currency}}</p>
-      </div>
-
-      <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#demo" ng-click="makeOrder()">Purchase Selected Items </button>
-      <!-- Table -->
-      <div class="row">
-        <div class="col-md-6">
-          <table class="table">
+  <div class="modal fade" id="demo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+          </button>
+          <h2 class="modal-title">Your Order Summary</h2>
+        </div>
+        <div class="modal-body">
+          <table>
             <tr>
+              <!-- <th>#</th> -->
               <th>Date</th>
               <th>Entree</th>
             </tr>
@@ -90,65 +156,18 @@
               <td>{{lunch.entree}}</td>
             </tr>
           </table>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="menu col-lg-9">
-        <h1 class="text-center">Star of the Sea: {{returnedMonth}} Menu</h1>
-
-        <button type="button" class="btn btn-default btn-lg" class="text-left" ng-click="previousMonth()">Previous Month</button>
-        <button type="button" class="btn btn-default btn-lg" class="text-right" ng-click="nextMonth()"> Next Month</button>
-        <div class="wood">
-          <div ng-repeat="lunch in lunches" class="col-lg-3 col-sm-3 lunch-height" ng-class="{'selected':lunch.added}">
-            <img class="img-responsive" src="https://bgcdn-babygizmocompany.netdna-ssl.com/wp-content/uploads/2015/07/Strawberries.jpg" alt="">
-            <p> {{lunch.entree}} </p>
-            <p> {{lunch.date}} </p>
-            <p> {{lunch.description}} </p>
-            <button type="button" class="btn btn-default btn-lg" ng-show="!lunch.added" ng-click="addLunch(lunch)">Add Lunch</button>
-            <button type="button" class="btn btn-default btn-lg" ng-show="lunch.added" ng-click="addLunch(lunch)">Remove Lunch</button>
-          </div>
-        </div>
-      </div> 
-    </div>
-
   </div>
-</div>
-
-
-<div class="modal fade" id="demo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-        </button>
-        <h2 class="modal-title">Your Order Summary</h2>
-      </div>
-      <div class="modal-body">
-        <table>
-          <th>#</th>
-          <th>Date</th>
-          <th>Entree</th>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 <% end %>
 </div>
+
 
 
 

@@ -21,9 +21,15 @@ html, body {
 }
 
 .wood {
-  background: pink;
+  background-image: url("theme/theme_img_1.jpg");
 }
- 
+
+#image_1 {
+  background-image: url("beef_stew.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} 
+
 .selected {
   /*border: 5px solid orange !important ;*/
   border-style: outset;

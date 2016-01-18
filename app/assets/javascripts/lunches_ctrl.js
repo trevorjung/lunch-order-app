@@ -9,15 +9,20 @@
       $http.get("/api/v1/lunches.json").then(function(response) {
         // $scope.lunches = response.data;
         $scope.original_data = response.data;
-
         $scope.getLunchesForMonth();
-
         $scope.month();
 
         // console.log(response.data);
       });
+      $http.get("/api/v1/students.json").then(
+        function(response) {
+          $scope.student_data = response.data;
+          console.log(response.data)
+      });
     } 
     
+
+
     $scope.getLunchesForMonth = function() {
       $scope.lunches = [];
       for (var i = 0; i < $scope.original_data.length; i++) {
@@ -28,6 +33,33 @@
           }
         }
     }
+
+
+    $scope.school = function(student_id, student_data ) {
+      
+      // $http.get("/api/v1/schools").then(function(response) {
+      //   $scope.school_data = response.data;
+      //   console.log(student.schools);
+      
+      // });
+
+
+      var schools = {
+        1: "Star of the Sea",
+        2: "St. Monica",
+        3: "St. Thomas Apostle",
+        4: "Zion Lutheran"
+      }
+        for (var i=0; i < student_data.length; i++) {
+          if (student_data[i].id === student_id) {
+            $scope.returnedSchool = schools[student_data[i].school_id];
+            console.log($scope.returnedSchool);
+          }
+        }
+      
+      // console.log($scope.student_data.school_id);
+    }
+ 
 
     $scope.month = function() {
       var months = {
@@ -47,6 +79,7 @@
       $scope.returnedMonth = months[$scope.selectedMonth];
       // console.log($scope.returnedMonth);
     }
+
 
     $scope.previousMonth = function() {
       console.log($scope.selectedMonth);
@@ -72,14 +105,6 @@
       $scope.month();
     }
 
-    // $scope.criteriaMatch = function(lunch) {
-    //   if (lunch) {
-    //     console.log(lunch);
-    //     console.log(lunch.date.charAt(6));
-    //     console.log($scope.selectedMonth);
-    //     return lunch.date.charAt(6) === $scope.selectedMonth;    
-    //   }
-    // }
 
 
 
@@ -115,19 +140,6 @@
         console.log($scope.selected_lunches);
     }
     
-    
-    // $scope.setDateAndEntree = function(lunch) {
-    //   $scope.selectedDate = lunch.date
-    //   $scope.selectedEntree = lunch.entree
-    // }
-        
-    
-    // $scope.deleteOrder = function(index, newOrder) {
-    //   $http.delete("/api/v1/orders/" + newOrder.id + ".json").then(function(response) {
-    //     $scope.selected_lunches.splice(index,1);
-    //     console.log(index);
-    //     });
-    // }
     
     $scope.total = 0
     $scope.subtotal = 0
