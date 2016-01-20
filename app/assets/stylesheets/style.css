@@ -84,20 +84,20 @@ html, body {
 }
 
 p {
-  color: black !important;
+  color: black ;
   text-align: left;
   font-size: 20px;
-  font-family: "Arimo";
+  /*font-family: "Palatino Linotype";*/
 }
 
 .wood h3 {
-  font-family: "Arimo";
+  /*font-family: "Palatino Linotype";*/
 
 }
 
 .panel-body p {
   font-size: 20px;
-  font-family: "Arimo";
+  /*font-family: "Palatino Linotype";*/
 
 }
 
@@ -121,15 +121,19 @@ p {
   min-height: 300px;
 }
 
-.jumbotron p {
-  font-family: "Open Sans";
-}
+/*.jumbotron p {
+  font-family: "Open Sans" !important;
+}*/
 
 .menu {
   background-image: url("theme/theme_img_1.jpg");
   text-align: center;
   /*background-color: red;*/
   padding: 30px;
+}
+
+.menu h1 {
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.1) !important; 
 }
 
 /*.print {
