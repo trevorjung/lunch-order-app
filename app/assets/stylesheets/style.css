@@ -38,23 +38,20 @@ html, body {
   
 }
 
-.selection {
-  position: fixed;
+.header-lunches {
+  padding-bottom: 100px;
 }
 
 
-.jumbotron {
-  margin: auto;
-}
 
 .text-center {
-  color: #4f74e3;
+  color: #4f74e3 !important;
   text-align: center;
 
 }
  
 .img-responsive {
-  border-radius: 25%;
+  border-radius: 5%;
 }
 
 #style h1 {
@@ -87,22 +84,61 @@ html, body {
 }
 
 p {
-  color: #4f74e3 !important;
+  color: black !important;
   text-align: left;
+  font-size: 20px;
+  font-family: "Arimo";
+}
+
+.wood h3 {
+  font-family: "Arimo";
+
+}
+
+.panel-body p {
+  font-size: 20px;
+  font-family: "Arimo";
+
+}
+
+.panel-heading h3 {
+  /*color: white;*/
+  /*background-color: maroon;*/
 }
 
 .lunch-height {
-  height: 400px;
+  height: 350px;
   /*border: 3px solid #4f74e3;*/
-  padding: 50px;
+  /*padding: 50px;*/
+  /*background-image: url("theme/theme_img_1.jpg");*/
+  padding: 15px;
+  /*margin: auto;*/
+}
+
+.jumbotron {
+  margin: 30px;
+  padding: 30px;
+  min-height: 300px;
+}
+
+.jumbotron p {
+  font-family: "Open Sans";
 }
 
 .menu {
   background-image: url("theme/theme_img_1.jpg");
   text-align: center;
-  background-color: red;
+  /*background-color: red;*/
   padding: 30px;
 }
+
+/*.print {
+  background-image: url("theme/tablecloth.jpg");
+
+  background-color: red;
+  text-align: center;
+  padding: 30px;
+}*/
 
 #footer {
   clear: both;
@@ -136,10 +172,10 @@ p {
   padding: 7px 9px;
 }
 
-.animated zoomIn {
+/*.animated zoomIn {
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
-}
+}*/
 
 @-webkit-keyframes zoomInDown {
   from {
@@ -222,4 +258,12 @@ p {
   background-image: -o-linear-gradient(top, #398f28, #193f11);
   background-image: linear-gradient(#398f28, #193f11);
   border-color: #193f11 #193f11 hsl(110, 56%, 11%);
-  }
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-font-smoothing: antialiased;
+  margin: 20px;
+  padding: 10px;
+  font-size: 25px;
+  text-align: center;
+
+}

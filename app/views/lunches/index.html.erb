@@ -1,4 +1,7 @@
 
+<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+
+
 <head>
   <link rel="stylesheet" href="animate.min.css">
 </head>
@@ -20,9 +23,9 @@
     <button class="left carousel-control" href="#carousel_intro" data-slide="prev" data-start="opacity: 0.4; left: 0%;" data-250="opacity:0; left: 5%;"><i class="icon-chevron-left"></i></button>
     <button class="right carousel-control" href="#carousel_intro" data-slide="next" data-start="opacity: 0.4; right: 0%;" data-250="opacity:0; right: 5%;"><i class="icon-chevron-right"></i></button>
   </div>
-  <div class="hidden-sm more">
+  <!-- <div class="hidden-sm more">
     <a href="#services" class="btn btn-cool squared" data-start="opacity:1; margin-top: 0%;" data-150="opacity:0; margin-top: -10%;"><i class="icon-angle-down"></i> See more</a>
-  </div>
+  </div> -->
   <!-- </div> -->
 </section>
 <!--end intro section-->
@@ -32,12 +35,21 @@
   <div class="jumbotron">
     <% if user_signed_in? %>
     <h1>Welcome back</h1>
+    <div class="row">
+      
+      <div class="col-md-6">
+        
+      </div>
+    </div>
+    
     <p class="text-center"class="lead">
-      Please Select a Student to Continue
+      |  Please Select a Student to Continue  |
     </p>
     
-
-      <button type="button" class="btn btn-custom btn-lg" class="text-center" ng-repeat="student in student_data" ng-click="schoolName(student.id, student_data)"> {{student.student_name}}</button>
+    <!-- <div class="col-md-3"> -->
+      
+      <button type="button" class="btn btn-custom btn-lg" class="text-center" ng-repeat="student in student_data" ng-click="schoolName(student.id, student_data)"><span> {{student.student_name}}</span></button>
+    <!-- </div> -->
       <!-- {{current_school_id}}
       {{returnedSchool}} -->
 
@@ -47,13 +59,13 @@
         Sign in or Sign up to Continue
       </p>
 
-      <div class="row-fluid">
-        <div class="span6 pull-right">
+      <div class="col-md-4 text-center">
+        <span class="span6">
           <%= link_to "Sign In", new_user_session_path, :class => "btn btn-large btn-success" %>
-        </div>
-        <div class="span6 pull-left">
+        </span>
+        <span class="span6">
           <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-large btn-success" %>
-        </div>
+        </span>
       </div>
       <% end %>
   </div>
@@ -74,7 +86,7 @@
       <div class="row wood">
         <div class="menu col-lg-3">
 
-          <div sticky class="panel panel-info" class="checkout" >
+          <div sticky class="panel panel-title" class="checkout" >
             <!-- Default panel contents -->
             <div class="panel-heading">
               <h3>Checkout</h3>
@@ -110,18 +122,18 @@
         <!-- <div ng-hide="showme"></div> -->
         <div class="container-fluid">
           <div class="menu col-lg-9">
-            <h1 class="text-center">{{returnedSchool}}: {{returnedMonth}} Menu</h1>
+            <h1 class="text-center" class="header-lunches">{{returnedSchool}}: {{returnedMonth}} Menu</h1>
 
             <button type="button" class="btn btn-success btn-lg" class="text-left" ng-click="previousMonth()" <span class="glyphicon glyphicon-edit"></span>Previous Month</button>
             <button type="button" class="btn btn-success btn-lg" class="text-right" ng-click="nextMonth()" <span class="glyphicon glyphicon-edit"></span> Next Month</button>
             <div class="wood">
               <div ng-repeat="lunch in lunches" class="col-lg-3 col-sm-3 lunch-height" ng-class="{'selected':lunch.added}">
                
-                <p><img src="{{lunch.image}}" class="img-responsive"></p>
+                <h3> {{lunch.date}} </h3>
+                <p><img src="/assets/{{lunch.image}}" class="img-responsive"></p>
                 <p> {{lunch.entree}} </p>
-                <p> {{lunch.date}} </p>
                 <p> {{lunch.description}} </p>
-                <button type="button" class="btn btn-default btn-lg" class = "selection" ng-show="!lunch.added" ng-click="addLunch(lunch)">Add Lunch</button>
+                <button type="button" class="btn btn-default btn-lg" ng-show="!lunch.added" ng-click="addLunch(lunch)">Add Lunch</button>
                 <button type="button" class="btn btn-default btn-lg" ng-show="lunch.added" ng-click="addLunch(lunch)">Remove Lunch</button>
               </div>
             </div>
