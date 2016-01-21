@@ -98,7 +98,12 @@ p {
 .panel-body p {
   font-size: 20px;
   /*font-family: "Palatino Linotype";*/
+  overflow: scroll;
 
+}
+
+.table {
+  font-size: 15px;
 }
 
 .panel-heading h3 {
@@ -181,7 +186,7 @@ p {
   animation-name: zoomIn;
 }*/
 
-@-webkit-keyframes zoomInDown {
+/*@-webkit-keyframes zoomInDown {
   from {
     opacity: 0;
     -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
@@ -217,7 +222,7 @@ p {
   }
 }
 
-/*.modal.fade .modal-dialog {
+.modal.fade .modal-dialog {
     -webkit-transform: scale(0.1);
     -moz-transform: scale(0.1);
     -ms-transform: scale(0.1);
@@ -241,14 +246,35 @@ p {
   font-family: "Bree Serif";
   background-color: #F6F5F5;
   border-radius: 5px;
+}*/
+.modal-title {
+  text-align: center;
 }
+
 .modal-body {
   font-size: 16px;
+  margin: auto;
+  padding: 20px;
+  height: 300px;
+
 }
-p {
-  margin: 50px;
+
+#demo {
+  background: grey;
+  opacity: 0.95;
+  
 }
-*/
+
+.summary  {
+  font-size: 16px;
+  margin-top: 40px;
+  /*position: bottom;*/
+}
+
+.date{
+  padding-right: 20px;
+
+}
 
 .btn-custom {
   background-color: hsl(110, 56%, 16%) !important;

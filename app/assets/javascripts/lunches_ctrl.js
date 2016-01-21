@@ -156,7 +156,7 @@
         console.log($scope.selected_lunches);
     }
     
-    
+    $scope.tax=0
     $scope.total = 0
     $scope.subtotal = 0
     $scope.price = 4.5

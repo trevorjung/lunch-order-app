@@ -158,17 +158,26 @@
         <div class="modal-body">
           <table>
             <tr>
-              <!-- <th>#</th> -->
               <th>Date</th>
               <th>Entree</th>
+              <!-- <th>Tax</th> -->
             </tr>
             <tr ng-repeat="lunch in selected_lunches">
-              <td>{{lunch.date}}</td>
+              <td class="date">{{lunch.date}}</td>
               <td>{{lunch.entree}}</td>
+              <!-- <td>{{tax | currency}}</td> -->
             </tr>
           </table>
 
+          <div class="summary">
+            <li> Number of Lunches: {{selected_lunches.length}} </li>
+            <li>Tax: {{tax | currency}} </li>
+            <li>Subtotal: {{subtotal | currency}}</li>
+            <li>Total: {{total | currency}}</li>
+            <li><%= link_to current_user.email, "/users/edit/" %></li>
+          </div>
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="reloadPage()">Close</button>
         </div>
