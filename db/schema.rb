@@ -13,101 +13,111 @@
 
 ActiveRecord::Schema.define(version: 20160117215144) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "lunches", force: :cascade do |t|
     t.date     "date"
-    t.string   "entree",      limit: 255
+    t.string   "entree"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "month",       limit: 255
-    t.integer  "school_id",   limit: 4
-    t.text     "description", limit: 65535
-    t.string   "image",       limit: 255
+    t.string   "month"
+    t.integer  "school_id"
+    t.text     "description"
+    t.string   "image"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "student_name", limit: 255
-    t.decimal  "price",                    precision: 10
-    t.decimal  "tax",                      precision: 10, scale: 3
-    t.decimal  "subtotal",                 precision: 10, scale: 3
-    t.decimal  "total",                    precision: 10, scale: 3
+    t.string   "student_name"
+    t.decimal  "price"
+    t.decimal  "tax",          precision: 10, scale: 3
+    t.decimal  "subtotal",     precision: 10, scale: 3
+    t.decimal  "total",        precision: 10, scale: 3
     t.date     "date"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
-    t.integer  "user_id",      limit: 4
-    t.string   "email",        limit: 255
-    t.integer  "school_id",    limit: 4
-    t.string   "school_name",  limit: 255
-    t.string   "entree",       limit: 255
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "user_id"
+    t.string   "email"
+    t.integer  "school_id"
+    t.string   "school_name"
+    t.string   "entree"
   end
 
   create_table "school_lunches", force: :cascade do |t|
-    t.integer  "school_id",   limit: 4
-    t.integer  "lunch_id",    limit: 4
+    t.integer  "school_id"
+    t.integer  "lunch_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "school_name", limit: 255
-    t.string   "entree",      limit: 255
+    t.string   "school_name"
+    t.string   "entree"
     t.date     "date"
-    t.string   "month",       limit: 255
+    t.string   "month"
   end
 
   create_table "schools", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "selected_days", force: :cascade do |t|
     t.date     "date"
-    t.string   "status",     limit: 255
-    t.integer  "user_id",    limit: 4
-    t.integer  "order_id",   limit: 4
+    t.string   "status"
+    t.integer  "user_id"
+    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "lunch_id",   limit: 4
+    t.integer  "lunch_id"
   end
 
   create_table "student_schools", force: :cascade do |t|
-    t.integer  "school_id",  limit: 4
-    t.integer  "student_id", limit: 4
+    t.integer  "school_id"
+    t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "student_users", force: :cascade do |t|
-    t.integer  "student_id", limit: 4
-    t.integer  "user_id",    limit: 4
+    t.integer  "student_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "students", force: :cascade do |t|
-    t.string   "student_name", limit: 255
-    t.integer  "grade",        limit: 4
+    t.string   "student_name"
+    t.integer  "grade"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",      limit: 4
-    t.integer  "school_id",    limit: 4
+    t.integer  "user_id"
+    t.integer  "school_id"
+  end
+
+  create_table "students_schools", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "school_id"
+    t.integer  "student_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
-    t.string   "school",                 limit: 255
-    t.string   "family_name",            limit: 255
-    t.string   "parent_contact",         limit: 255
-    t.integer  "phone",                  limit: 4
-    t.string   "address",                limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "school"
+    t.string   "family_name"
+    t.string   "parent_contact"
+    t.integer  "phone"
+    t.string   "address"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
