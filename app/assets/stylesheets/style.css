@@ -1,6 +1,6 @@
-* {
+/** {
   margin: 0;
-}
+}*/
 html, body {
   height: 100%;
 }
@@ -271,7 +271,7 @@ p {
   /*position: bottom;*/
 }
 
-.date{
+.date {
   padding-right: 20px;
 
 }
