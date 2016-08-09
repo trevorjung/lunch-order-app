@@ -1,15 +1,14 @@
 (function() {
   "use strict";
 
-  angular.module("app").controller("lunchesCtrl", function($scope, $http, StudentService) {
+  angular.module("app").controller("lunchesCtrl", function($scope, $http) {
 
 
     $scope.setup = function() {
       $http.get("/api/v1/lunches.json").then(function(response) {
-        // $scope.lunches = response.data;
+        
         $scope.selectedMonth = parseInt(new Date().getMonth()) + 1;
         $scope.original_data = response.data;
-
 
         $scope.current_school_id = 1;
         $scope.returnedSchool = "Star of the Sea";
@@ -17,12 +16,11 @@
         $scope.getLunchesForMonth();
         $scope.month();
 
-        // console.log(response.data);
       });
-      $http.get("/api/v1/students.json").then(
-        function(response) {
-          $scope.student_data = response.data;
-          // console.log(response.data)
+
+      $http.get("/api/v1/students.json").then(function(response) {
+        $scope.student_data = response.data;
+          
       });
     } 
     
@@ -30,27 +28,20 @@
 
     $scope.getLunchesForMonth = function() {
       $scope.lunches = [];
-      for (var i = 0; i < $scope.original_data.length; i++) {
+        for (var i = 0; i < $scope.original_data.length; i++) {
           if ((parseInt($scope.original_data[i].date.substring(5,7)) === parseInt(($scope.selectedMonth))) && (parseInt($scope.current_school_id) === parseInt($scope.original_data[i].school_id)))  {
-        // console.log(parseInt($scope.current_school_id));
-        // console.log($scope.original_data[i].school_id);
-            // console.log("lunched updated");
+        
             $scope.lunches.push($scope.original_data[i]);
           }
           else {
-          }
-            // console.log("helo");
-            // console.log($scope.original_data[i].school_id);
+         
+        }   
 
-        }
-            // console.log($scope.current_school_id);
-            // console.log($scope.lunches);
+      }
 
     }
 
-    // $scope.getLunchesBySchool = function() {
-
-    // }
+   
 
     $scope.schoolName = function(student_id, student_data ) {
       var schools = {
@@ -65,17 +56,11 @@
             $scope.current_school_id = student_data[i].school_id;
           }
         }
-        
-        // console.log($scope.returnedSchool);
-        // return $scope.returnedSchool;  
+
         $scope.getLunchesForMonth();
         $scope.showme = true;
     }
       
- 
-    // $scope.studentLunches = function(student_id) {
-    //   if ($scope.original_data.school_id = student.school_id)
-    // }
 
     $scope.month = function() {
       var months = {
@@ -92,13 +77,13 @@
         11: "November",
         12: "December"
       }
-      $scope.returnedMonth = months[$scope.selectedMonth];
-      // console.log($scope.returnedMonth);
+        $scope.returnedMonth = months[$scope.selectedMonth];
+      
     }
 
 
     $scope.previousMonth = function() {
-      // console.log($scope.selectedMonth);
+      
       if ($scope.selectedMonth === 1) {
         $scope.selectedMonth = 12;
       } else {
@@ -112,25 +97,21 @@
     $scope.nextMonth = function () {
       if ($scope.selectedMonth === 12) {
         $scope.selectedMonth = 1;
-        // console.log($scope.selectedMonth);
+        
       } else {
       $scope.selectedMonth += 1;
-      // console.log($scope.selectedMonth);
+      
       }
       $scope.getLunchesForMonth();
       $scope.month();
     }
 
-
-
-
-
-    $scope.selected_lunches = [];
     
+    $scope.selected_lunches = [];
     
     $scope.selectedLunch = function(lunch) {
       lunch.added = !lunch.added;
-      // console.log(lunch.added);
+      
     }  
 
     
@@ -164,18 +145,12 @@
 
     $scope.makeOrder = function() {
 
-        // console.log($scope.selected_lunches[i].entree)
-
-        // var lunch = $scope.selected_lunches[i];
-        // var price = lunch.calculateTax($scope.price)
-
         var subtotal = $scope.calculateSubtotal();
         var tax = $scope.calculateTax();
         var total = $scope.calculateTotal();
 
         var newOrder = {
           lunches: $scope.selected_lunches,
-          // school_id: lunch.school_id,
           tax: tax,
           subtotal: subtotal,
           total: total
@@ -183,20 +158,16 @@
 
         console.log("New order:");
         console.log(newOrder);
-
-        // var newSelectedDay = {
-        //   lunch_id: lunch.id;
-
-        // }
+      
         
-          $http.post("/api/v1/orders.json", newOrder).then(function(response) {
+        $http.post("/api/v1/orders.json", newOrder).then(function(response) {
              
              console.log(response);
 
-          });
-      
+        });
         
     } 
+
 
     $scope.reloadPage = function() {
       window.location.reload();
@@ -220,11 +191,7 @@
       return $scope.total;
     }
 
-
-      
-
-
-        
+    
 
 
     window.$scope = $scope;
