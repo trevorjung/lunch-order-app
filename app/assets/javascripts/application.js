@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require theme/bootstrap.min
 //= require theme/guideline.main
 //= require theme/html5shiv
@@ -30,6 +31,7 @@
 //= require theme/toucheffects
 //= require theme/custom
 //= require angular
+//= require angular-animate
 //= require sticky
 //= require app
 //= require_tree .

@@ -12,7 +12,10 @@
  *
  *= require theme/bootstrap.min
  *= require theme/style
+ *= require animate.min
  *= require sticky
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";

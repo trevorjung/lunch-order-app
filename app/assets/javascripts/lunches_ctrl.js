@@ -73,9 +73,7 @@
     }
       
  
-    // $scope.studentLunches = function(student_id) {
-    //   if ($scope.original_data.school_id = student.school_id)
-    // }
+    
 
     $scope.month = function() {
       var months = {

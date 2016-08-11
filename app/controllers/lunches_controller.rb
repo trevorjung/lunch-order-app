@@ -27,12 +27,7 @@ class LunchesController < ApplicationController
     @school_lunch = SchoolLunch.where(school_id: params[:school_id], month: params[:month])
   end
 
-  # def edit
-  #   @lunch = Lunch.find_by(id: params[:id])
-  # end
-
-  # def update
-  # end
+  
 
   def destroy
     lunch = Lunch.find_by(id: params[:id])
